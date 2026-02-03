@@ -6,20 +6,8 @@
         <title>About Us - Freytor</title>
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./tailwind.config.js"></script>
         <link rel="stylesheet" href="./css/index.css" />
-        <script>
-            tailwind.config = {
-                prefix: 'tw-',
-                theme: {
-                    extend: {
-                        colors: {
-                            'brand-blue': '#1A5BAB',
-                            'brand-green': '#3EA344',
-                        }
-                    }
-                }
-            }
-        </script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
@@ -29,86 +17,38 @@
         />
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
-        <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
-        >
-            <a class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-items-center" href="index.html">
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    class="tw-h-full tw-w-full tw-object-contain"
-                />
-            </a>
-            <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
-                id="collapsed-header-items"
-            >
-                <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
-                >
-                    <a class="header-links" href="about.html"> About us </a>
-                    <a class="header-links" href="pricing.html"> Pricing </a>
-                    <a class="header-links" href="contact.html" rel="noreferrer">
-                        Contact us
-                    </a>
-                </div>
-                <div
-                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
-                >
-                    <a
-                        href="login.html"
-                        aria-label="login"
-                        class="tw-transition-colors tw-duration-[0.3s]"
-                    >
-                        Login
-                    </a>
-
-                    <a
-                        href="signup.html"
-                        aria-label="signup"
-                        class="tw-rounded-md tw-border-2 tw-border-[#1A5BAB] tw-p-1 tw-px-3 tw-font-medium tw-text-[#1A5BAB] tw-transition-all tw-duration-[0.3s] hover:tw-bg-[#1A5BAB] hover:tw-text-white"
-                    >
-                        Signup
-                    </a>
-                </div>
-            </div>
-            <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
-                onclick="toggleHeader()"
-                aria-label="menu"
-                id="collapse-btn"
-            ></button>
-        </header>
+        <!-- Header Component -->
+        <div id="header-component"></div>
 
         <section class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30 tw-pt-[100px] tw-px-[10%] tw-pb-12 max-md:tw-px-4 max-md:tw-pb-8">
             <div class="tw-mx-auto tw-max-w-[1200px] tw-pb-12">
                 <h1 class="tw-text-6xl tw-font-bold tw-mb-6 tw-leading-[1.2] max-md:tw-text-4xl">
-                    About <span class="tw-text-[#1A5BAB]">Freytor</span>
+                    About <span class="tw-text-brand-blue">Freytor</span>
                 </h1>
                 
-                <div class="tw-text-2xl tw-text-gray-700 tw-mb-16 tw-leading-relaxed tw-max-w-[900px] max-md:tw-text-xl">
+                <div class="tw-text-2xl tw-text-gray-700 tw-mb-12 tw-leading-relaxed tw-max-w-[900px] max-md:tw-text-xl">
                     Simplifying logistics for small and medium businesses in emerging markets. One dashboard, unlimited possibilities.
                 </div>
 
-                <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-8 tw-mb-16">
-                    <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-lg tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-[#1A5BAB] hover:tw-shadow-xl hover:tw--translate-y-1">
+                <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-8 tw-mb-12">
+                    <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-lg tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-brand-blue hover:tw-shadow-xl hover:tw--translate-y-1">
                         <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4">
                             <div class="tw-flex tw-h-14 tw-w-14 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                <i class="bi bi-bullseye tw-text-3xl tw-text-[#1A5BAB]"></i>
+                                <i class="bi bi-bullseye tw-text-3xl tw-text-brand-blue"></i>
                             </div>
-                            <h2 class="tw-text-3xl tw-font-bold tw-text-[#1A5BAB]">Our Mission</h2>
+                            <h2 class="tw-text-3xl tw-font-bold tw-text-brand-blue">Our Mission</h2>
                         </div>
                         <p class="tw-text-gray-700 tw-leading-relaxed tw-text-lg">
                             To empower SMEs with enterprise-level logistics capabilities at an affordable price. We believe every business, regardless of size, deserves access to powerful tools that simplify operations and drive growth.
                         </p>
                     </div>
 
-                    <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-lg tw-border-2 tw-border-green-100 tw-transition-all tw-duration-300 hover:tw-border-[#3EA344] hover:tw-shadow-xl hover:tw--translate-y-1">
+                    <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-lg tw-border-2 tw-border-green-100 tw-transition-all tw-duration-300 hover:tw-border-brand-green hover:tw-shadow-xl hover:tw--translate-y-1">
                         <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4">
                             <div class="tw-flex tw-h-14 tw-w-14 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100">
-                                <i class="bi bi-eye tw-text-3xl tw-text-[#3EA344]"></i>
+                                <i class="bi bi-eye tw-text-3xl tw-text-brand-green"></i>
                             </div>
-                            <h2 class="tw-text-3xl tw-font-bold tw-text-[#3EA344]">Our Vision</h2>
+                            <h2 class="tw-text-3xl tw-font-bold tw-text-brand-green">Our Vision</h2>
                         </div>
                         <p class="tw-text-gray-700 tw-leading-relaxed tw-text-lg">
                             A world where logistics complexity never holds back a growing business. We're building the infrastructure that enables SMEs to compete globally while staying locally rooted.
@@ -116,45 +56,45 @@
                     </div>
                 </div>
 
-                <div class="tw-bg-white tw-p-10 tw-rounded-xl tw-shadow-xl tw-mb-16">
+                <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-xl tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-10 tw-text-center">
-                        Why <span class="tw-text-[#1A5BAB]">Freytor</span>?
+                        Why <span class="tw-text-brand-blue">Freytor</span>?
                     </h2>
                     
                     <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-8">
                         <div class="tw-text-center tw-p-6 tw-rounded-lg tw-transition-all tw-duration-300 hover:tw-bg-blue-50">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-20 tw-w-20 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                    <i class="bi bi-lightning-charge tw-text-4xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-lightning-charge tw-text-4xl tw-text-brand-blue"></i>
                                 </div>
                             </div>
-                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-[#1A5BAB]">Built for Speed</h3>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-brand-blue">Built for Speed</h3>
                             <p class="tw-text-gray-600 tw-leading-relaxed">Get up and running in minutes, not months. No complex setup or training required.</p>
                         </div>
 
                         <div class="tw-text-center tw-p-6 tw-rounded-lg tw-transition-all tw-duration-300 hover:tw-bg-green-50">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-20 tw-w-20 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100">
-                                    <i class="bi bi-cash-coin tw-text-4xl tw-text-[#3EA344]"></i>
+                                    <i class="bi bi-cash-coin tw-text-4xl tw-text-brand-green"></i>
                                 </div>
                             </div>
-                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-[#3EA344]">Affordable Pricing</h3>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-brand-green">Affordable Pricing</h3>
                             <p class="tw-text-gray-600 tw-leading-relaxed">Starting at just $19/month. Enterprise features without enterprise prices.</p>
                         </div>
 
                         <div class="tw-text-center tw-p-6 tw-rounded-lg tw-transition-all tw-duration-300 hover:tw-bg-blue-50">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-20 tw-w-20 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                    <i class="bi bi-globe-americas tw-text-4xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-globe-americas tw-text-4xl tw-text-brand-blue"></i>
                                 </div>
                             </div>
-                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-[#1A5BAB]">Emerging Markets First</h3>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-3 tw-text-brand-blue">Emerging Markets First</h3>
                             <p class="tw-text-gray-600 tw-leading-relaxed">Designed specifically for the challenges and opportunities of emerging markets.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="tw-bg-gradient-to-r tw-from-[#1A5BAB] tw-to-[#3EA344] tw-p-10 tw-rounded-xl tw-text-white tw-mb-16">
+                <div class="tw-bg-gradient-to-r tw-from-brand-blue tw-to-brand-green tw-p-8 tw-rounded-xl tw-text-white tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-6 tw-text-center">Our Story</h2>
                     <p class="tw-text-lg tw-leading-relaxed tw-max-w-[900px] tw-mx-auto tw-text-center">
                         Freytor was born from frustration. Our founders spent years watching small businesses struggle with spreadsheets, WhatsApp chaos, and fragmented carrier portals. We knew there had to be a better way. So we built it. Today, we're proud to serve hundreds of SMEs across emerging markets, helping them track shipments, optimize routes, and manage inventory with ease.
@@ -162,84 +102,84 @@
                 </div>
 
                 <!-- Company Stats -->
-                <div class="tw-bg-white tw-p-10 tw-rounded-xl tw-shadow-xl tw-mb-16">
+                <div class="tw-bg-white tw-p-8 tw-rounded-xl tw-shadow-xl tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-10 tw-text-center">
-                        Freytor by the <span class="tw-text-[#3EA344]">numbers</span>
+                        Freytor by the <span class="tw-text-brand-green">numbers</span>
                     </h2>
                     
                     <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-8">
-                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-[#1A5BAB]">
-                            <div class="tw-text-5xl tw-font-bold tw-text-[#1A5BAB] tw-mb-2">50+</div>
+                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-brand-blue">
+                            <div class="tw-text-5xl tw-font-bold tw-text-brand-blue tw-mb-2">50+</div>
                             <p class="tw-text-gray-600 tw-font-medium">Active Businesses</p>
                         </div>
                         
-                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-[#3EA344]">
-                            <div class="tw-text-5xl tw-font-bold tw-text-[#3EA344] tw-mb-2">500K+</div>
+                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-brand-green">
+                            <div class="tw-text-5xl tw-font-bold tw-text-brand-green tw-mb-2">500K+</div>
                             <p class="tw-text-gray-600 tw-font-medium">Shipments Tracked</p>
                         </div>
                         
-                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-[#1A5BAB]">
-                            <div class="tw-text-5xl tw-font-bold tw-text-[#1A5BAB] tw-mb-2">15%</div>
+                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-brand-blue">
+                            <div class="tw-text-5xl tw-font-bold tw-text-brand-blue tw-mb-2">15%</div>
                             <p class="tw-text-gray-600 tw-font-medium">Average Cost Savings</p>
                         </div>
                         
-                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-[#3EA344]">
-                            <div class="tw-text-5xl tw-font-bold tw-text-[#3EA344] tw-mb-2">24/7</div>
+                        <div class="tw-text-center tw-p-6 tw-border-l-4 tw-border-brand-green">
+                            <div class="tw-text-5xl tw-font-bold tw-text-brand-green tw-mb-2">24/7</div>
                             <p class="tw-text-gray-600 tw-font-medium">Customer Support</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Core Values -->
-                <div class="tw-mb-16">
+                <div class="tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-10 tw-text-center">
-                        Our <span class="tw-text-[#1A5BAB]">core values</span>
+                        Our <span class="tw-text-brand-blue">core values</span>
                     </h2>
                     
                     <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-6">
-                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-[#1A5BAB] tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
+                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-brand-blue tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
                             <div class="tw-flex tw-items-start tw-gap-4">
                                 <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100 tw-flex-shrink-0">
-                                    <i class="bi bi-heart tw-text-2xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-heart tw-text-2xl tw-text-brand-blue"></i>
                                 </div>
                                 <div>
-                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-[#1A5BAB]">Customer-First</h3>
+                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-brand-blue">Customer-First</h3>
                                     <p class="tw-text-gray-600 tw-leading-relaxed">Every decision we make starts with understanding our customers' needs and challenges.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-[#3EA344] tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
+                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-brand-green tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
                             <div class="tw-flex tw-items-start tw-gap-4">
                                 <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100 tw-flex-shrink-0">
-                                    <i class="bi bi-lightbulb tw-text-2xl tw-text-[#3EA344]"></i>
+                                    <i class="bi bi-lightbulb tw-text-2xl tw-text-brand-green"></i>
                                 </div>
                                 <div>
-                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-[#3EA344]">Innovation</h3>
+                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-brand-green">Innovation</h3>
                                     <p class="tw-text-gray-600 tw-leading-relaxed">We continuously improve and adapt to bring cutting-edge logistics solutions to SMEs.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-[#1A5BAB] tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
+                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-brand-blue tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
                             <div class="tw-flex tw-items-start tw-gap-4">
                                 <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100 tw-flex-shrink-0">
-                                    <i class="bi bi-shield-check tw-text-2xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-shield-check tw-text-2xl tw-text-brand-blue"></i>
                                 </div>
                                 <div>
-                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-[#1A5BAB]">Transparency</h3>
+                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-brand-blue">Transparency</h3>
                                     <p class="tw-text-gray-600 tw-leading-relaxed">Clear pricing, honest communication, and no hidden surprises. Ever.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-[#3EA344] tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
+                        <div class="tw-bg-white tw-p-6 tw-rounded-xl tw-shadow-lg tw-border-l-4 tw-border-brand-green tw-transition-all tw-duration-300 hover:tw-shadow-xl hover:tw--translate-y-1">
                             <div class="tw-flex tw-items-start tw-gap-4">
                                 <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100 tw-flex-shrink-0">
-                                    <i class="bi bi-arrows-move tw-text-2xl tw-text-[#3EA344]"></i>
+                                    <i class="bi bi-arrows-move tw-text-2xl tw-text-brand-green"></i>
                                 </div>
                                 <div>
-                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-[#3EA344]">Simplicity</h3>
+                                    <h3 class="tw-text-xl tw-font-bold tw-mb-2 tw-text-brand-green">Simplicity</h3>
                                     <p class="tw-text-gray-600 tw-leading-relaxed">Logistics is complex enough. Our platform shouldn't be. We make it simple.</p>
                                 </div>
                             </div>
@@ -250,7 +190,7 @@
                 <!-- CTA Section -->
                 <div class="tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-12 tw-rounded-xl tw-text-center">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
-                        Join the <span class="tw-text-[#3EA344]">Freytor</span> community
+                        Join the <span class="tw-text-brand-green">Freytor</span> community
                     </h2>
                     <p class="tw-text-lg tw-text-gray-700 tw-mb-8 tw-max-w-[700px] tw-mx-auto">
                         See why hundreds of SMEs trust Freytor to power their logistics operations
@@ -259,7 +199,7 @@
                         <a href="signup.html" class="btn tw-text-lg tw-px-8 tw-py-4">
                             Start Free Trial
                         </a>
-                        <a href="contact.html" class="tw-rounded-lg tw-border-2 tw-border-[#1A5BAB] tw-px-8 tw-py-4 tw-font-semibold tw-text-[#1A5BAB] tw-transition-all tw-duration-300 hover:tw-bg-[#1A5BAB] hover:tw-text-white tw-inline-flex tw-place-items-center">
+                        <a href="contact.html" class="tw-rounded-lg tw-border-2 tw-border-brand-blue tw-px-8 tw-py-4 tw-font-semibold tw-text-brand-blue tw-transition-all tw-duration-300 hover:tw-bg-brand-blue hover:tw-text-white tw-inline-flex tw-place-items-center">
                             Contact Sales
                         </a>
                     </div>
@@ -267,45 +207,10 @@
             </div>
         </section>
 
-        <footer
-            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-p-12 tw-px-[10%] tw-text-black max-md:tw-flex-col max-md:tw-p-8"
-        >
-            <div
-                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
-            >
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    srcset=""
-                    class="tw-max-w-[120px]"
-                />
-                <div class="tw-text-center tw-text-gray-700">
-                    P.H. Colonial, Vía Israel
-                    <br />
-                    San Francisco
-                    <br />
-                    Panama City, Panama
-                </div>
-                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
-                <div class="tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-[#1A5BAB]">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-5 max-md:tw-w-full">
-                <h2 class="tw-text-3xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-xl">Resources</h2>
-                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-                    <a href="about.html" class="footer-link">About us</a>
-                    <a href="contact.html" class="footer-link">FAQ</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
-                    <a href="#" class="footer-link">Blogs</a>
-                    <a href="#" class="footer-link">Privacy policy</a>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer Component -->
+        <div id="footer-component"></div>
 
         <script src="./index.js"></script>
+        <script src="./components/components.js"></script>
     </body>
 </html>

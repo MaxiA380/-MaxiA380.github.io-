@@ -6,6 +6,7 @@
         <title>Pricing - Freytor</title>
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./tailwind.config.js"></script>
         <link rel="stylesheet" href="./css/index.css" />
         <link
             rel="stylesheet"
@@ -14,77 +15,16 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <script>
-            tailwind.config = {
-                prefix: 'tw-',
-                theme: {
-                    extend: {
-                        colors: {
-                            'brand-blue': '#1A5BAB',
-                            'brand-green': '#3EA344',
-                        }
-                    }
-                }
-            }
-        </script>
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
-        <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
-        >
-            <a class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-items-center" href="index.html">
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    class="tw-h-full tw-w-full tw-object-contain"
-                />
-            </a>
-            <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
-                id="collapsed-header-items"
-            >
-                <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
-                >
-                    <a class="header-links" href="about.html"> About us </a>
-                    <a class="header-links" href="pricing.html"> Pricing </a>
-                    <a class="header-links" href="contact.html" rel="noreferrer">
-                        Contact us
-                    </a>
-                </div>
-                <div
-                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
-                >
-                    <a
-                        href="login.html"
-                        aria-label="login"
-                        class="tw-transition-colors tw-duration-[0.3s]"
-                    >
-                        Login
-                    </a>
-
-                    <a
-                        href="signup.html"
-                        aria-label="signup"
-                        class="tw-rounded-md tw-border-2 tw-border-[#1A5BAB] tw-p-1 tw-px-3 tw-font-medium tw-text-[#1A5BAB] tw-transition-all tw-duration-[0.3s] hover:tw-bg-[#1A5BAB] hover:tw-text-white"
-                    >
-                        Signup
-                    </a>
-                </div>
-            </div>
-            <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
-                onclick="toggleHeader()"
-                aria-label="menu"
-                id="collapse-btn"
-            ></button>
-        </header>
+        <!-- Header Component -->
+        <div id="header-component"></div>
 
         <section class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-flex-col tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30 tw-pt-[100px] tw-px-4 lg:tw-px-[5%] tw-pb-[80px]">
             <div class="tw-mx-auto tw-max-w-[1400px] tw-w-full">
-                <div class="tw-text-center tw-mb-16">
+                <div class="tw-text-center tw-mb-12">
                     <h1 class="tw-text-5xl lg:tw-text-6xl tw-font-bold tw-mb-6 tw-leading-[1.2]">
-                        Simple, <span class="tw-text-[#1A5BAB]">transparent</span> pricing
+                        Simple, <span class="tw-text-brand-blue">transparent</span> pricing
                     </h1>
                     <p class="tw-text-gray-700 tw-text-lg lg:tw-text-xl tw-mb-4 tw-max-w-[700px] tw-mx-auto tw-leading-relaxed">
                         Choose the perfect plan for your logistics needs. Start with a 14-day free trial, no credit card required.
@@ -100,7 +40,7 @@
                 <div class="tw-flex tw-flex-col lg:tw-flex-row tw-justify-between lg:tw-justify-end tw-items-center tw-mb-8 tw-gap-4">
                     <span class="tw-text-sm tw-text-gray-600 tw-font-medium">Save 10% with our annual plan</span>
                     <div class="tw-flex tw-items-center tw-gap-2 tw-bg-white tw-rounded-full tw-p-1 tw-shadow-md">
-                        <button class="tw-px-6 tw-py-2 tw-rounded-full tw-transition-all tw-bg-[#1A5BAB] tw-text-white tw-font-semibold tw-text-sm" id="annual-btn">
+                        <button class="tw-px-6 tw-py-2 tw-rounded-full tw-transition-all tw-bg-brand-blue tw-text-white tw-font-semibold tw-text-sm" id="annual-btn">
                             ANNUAL
                         </button>
                         <button class="tw-px-6 tw-py-2 tw-rounded-full tw-transition-all tw-text-gray-600 tw-font-semibold tw-text-sm hover:tw-bg-gray-100" id="monthly-btn">
@@ -111,17 +51,17 @@
 
                 <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-6 lg:tw-gap-8 tw-mb-8 tw-max-w-[1200px] tw-mx-auto">
                     <!-- BASIC PLAN -->
-                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-6 lg:tw-p-8 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-[#1A5BAB] hover:tw-shadow-2xl hover:tw--translate-y-2">
+                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-6 lg:tw-p-8 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-brand-blue hover:tw-shadow-2xl hover:tw--translate-y-2">
                         <div class="tw-text-center tw-mb-6">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                    <i class="bi bi-rocket-takeoff tw-text-3xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-rocket-takeoff tw-text-3xl tw-text-brand-blue"></i>
                                 </div>
                             </div>
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Starter</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
-                                <span class="tw-text-2xl tw-font-bold tw-text-[#1A5BAB] tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-[#1A5BAB] tw-leading-none">19</span>
+                                <span class="tw-text-2xl tw-font-bold tw-text-brand-blue tw-mt-2">$</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none">19</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
                             <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $228</p>
@@ -129,39 +69,39 @@
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span><strong>100 shipments/month</strong> included</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Real-time shipment tracking</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Basic route optimization</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>100+ carrier integrations</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>1 user seat</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>2 carrier accounts</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>1 shipping location</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>REST API access</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Email support</span>
                             </li>
                         </ul>
@@ -172,20 +112,20 @@
                     </div>
 
                     <!-- GROWTH PLAN -->
-                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-6 lg:tw-p-8 tw-border-2 tw-border-[#3EA344] tw-transition-all tw-duration-300 hover:tw-shadow-2xl hover:tw--translate-y-2 tw-relative tw-scale-100 lg:tw-scale-105">
-                        <div class="tw-absolute tw--top-4 tw-left-1/2 tw--translate-x-1/2 tw-bg-gradient-to-r tw-from-[#1A5BAB] tw-to-[#3EA344] tw-text-white tw-px-8 tw-py-2 tw-rounded-full tw-text-xs tw-font-bold tw-shadow-lg tw-uppercase">
+                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-6 lg:tw-p-8 tw-border-2 tw-border-brand-green tw-transition-all tw-duration-300 hover:tw-shadow-2xl hover:tw--translate-y-2 tw-relative tw-scale-100 lg:tw-scale-105">
+                        <div class="tw-absolute tw--top-4 tw-left-1/2 tw--translate-x-1/2 tw-bg-gradient-to-r tw-from-brand-blue tw-to-brand-green tw-text-white tw-px-8 tw-py-2 tw-rounded-full tw-text-xs tw-font-bold tw-shadow-lg tw-uppercase">
                             Most Popular
                         </div>
                         <div class="tw-text-center tw-mb-6 tw-mt-2">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100">
-                                    <i class="bi bi-graph-up-arrow tw-text-3xl tw-text-[#3EA344]"></i>
+                                    <i class="bi bi-graph-up-arrow tw-text-3xl tw-text-brand-green"></i>
                                 </div>
                             </div>
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Growth</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
-                                <span class="tw-text-2xl tw-font-bold tw-text-[#3EA344] tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-[#3EA344] tw-leading-none">39</span>
+                                <span class="tw-text-2xl tw-font-bold tw-text-brand-green tw-mt-2">$</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-green tw-leading-none">39</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
                             <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $468</p>
@@ -193,43 +133,43 @@
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span><strong>500 shipments/month</strong> included</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Advanced shipment tracking & analytics</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>AI-powered route optimization</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Inventory management dashboard</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>100+ carrier integrations</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>3 user seats</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>5 carrier accounts</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>5 shipping locations</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>REST API + Webhooks</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Priority support</span>
                             </li>
                         </ul>
@@ -240,17 +180,17 @@
                     </div>
 
                     <!-- PRO PLAN -->
-                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-6 lg:tw-p-8 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-[#1A5BAB] hover:tw-shadow-2xl hover:tw--translate-y-2">
+                    <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-6 lg:tw-p-8 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-border-brand-blue hover:tw-shadow-2xl hover:tw--translate-y-2">
                         <div class="tw-text-center tw-mb-6">
                             <div class="tw-flex tw-justify-center tw-mb-4">
                                 <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                    <i class="bi bi-building tw-text-3xl tw-text-[#1A5BAB]"></i>
+                                    <i class="bi bi-building tw-text-3xl tw-text-brand-blue"></i>
                                 </div>
                             </div>
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Enterprise</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
-                                <span class="tw-text-2xl tw-font-bold tw-text-[#1A5BAB] tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-[#1A5BAB] tw-leading-none">79</span>
+                                <span class="tw-text-2xl tw-font-bold tw-text-brand-blue tw-mt-2">$</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none">79</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
                             <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $948</p>
@@ -258,55 +198,55 @@
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span><strong>Unlimited shipments</strong></span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Advanced analytics & reporting</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>AI-powered route optimization</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Multi-warehouse management</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Custom carrier connectors</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Unlimited users</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Unlimited carrier accounts</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Unlimited shipping locations</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>REST API + Webhooks</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Multi-merchant support</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>SSO (SAML 2.0)</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>Dedicated account manager</span>
                             </li>
                             <li class="tw-flex tw-items-start tw-gap-3">
-                                <i class="bi bi-check-circle-fill tw-text-[#3EA344] tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
+                                <i class="bi bi-check-circle-fill tw-text-brand-green tw-text-lg tw-mt-0.5 tw-flex-shrink-0"></i>
                                 <span>24/7 premium support</span>
                             </li>
                         </ul>
@@ -328,7 +268,7 @@
             <div class="tw-mx-auto tw-max-w-[1400px]">
                 <div class="tw-text-center tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
-                        Compare <span class="tw-text-[#1A5BAB]">features</span>
+                        Compare <span class="tw-text-brand-blue">features</span>
                     </h2>
                     <p class="tw-text-gray-600 tw-text-lg">
                         Find the perfect fit for your logistics needs
@@ -340,23 +280,23 @@
                         <thead>
                             <tr class="tw-border-b-2 tw-border-gray-200">
                                 <th class="tw-text-left tw-p-4 tw-font-semibold tw-text-gray-700">Feature</th>
-                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-[#1A5BAB]">Starter</th>
-                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-[#3EA344]">Growth</th>
-                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-[#1A5BAB]">Enterprise</th>
+                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-brand-blue">Starter</th>
+                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-brand-green">Growth</th>
+                                <th class="tw-text-center tw-p-4 tw-font-semibold tw-text-brand-blue">Enterprise</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="tw-border-b tw-border-gray-100">
                                 <td class="tw-p-4 tw-text-gray-700">Monthly shipments included</td>
                                 <td class="tw-p-4 tw-text-center">100</td>
-                                <td class="tw-p-4 tw-text-center tw-font-semibold">1,500</td>
+                                <td class="tw-p-4 tw-text-center tw-font-semibold">500</td>
                                 <td class="tw-p-4 tw-text-center tw-font-semibold">Unlimited</td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100 tw-bg-gray-50">
                                 <td class="tw-p-4 tw-text-gray-700">Real-time tracking</td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100">
                                 <td class="tw-p-4 tw-text-gray-700">Route optimization</td>
@@ -367,8 +307,8 @@
                             <tr class="tw-border-b tw-border-gray-100 tw-bg-gray-50">
                                 <td class="tw-p-4 tw-text-gray-700">Inventory management</td>
                                 <td class="tw-p-4 tw-text-center"><i class="bi bi-dash tw-text-gray-400 tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100">
                                 <td class="tw-p-4 tw-text-gray-700">User seats</td>
@@ -390,21 +330,21 @@
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100 tw-bg-gray-50">
                                 <td class="tw-p-4 tw-text-gray-700">API access</td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100">
                                 <td class="tw-p-4 tw-text-gray-700">Webhooks</td>
                                 <td class="tw-p-4 tw-text-center"><i class="bi bi-dash tw-text-gray-400 tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100 tw-bg-gray-50">
                                 <td class="tw-p-4 tw-text-gray-700">Multi-merchant support</td>
                                 <td class="tw-p-4 tw-text-center"><i class="bi bi-dash tw-text-gray-400 tw-text-xl"></i></td>
                                 <td class="tw-p-4 tw-text-center"><i class="bi bi-dash tw-text-gray-400 tw-text-xl"></i></td>
-                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-[#3EA344] tw-text-xl"></i></td>
+                                <td class="tw-p-4 tw-text-center"><i class="bi bi-check-lg tw-text-brand-green tw-text-xl"></i></td>
                             </tr>
                             <tr class="tw-border-b tw-border-gray-100">
                                 <td class="tw-p-4 tw-text-gray-700">Support level</td>
@@ -423,7 +363,7 @@
             <div class="tw-mx-auto tw-max-w-[900px]">
                 <div class="tw-text-center tw-mb-12">
                     <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
-                        Frequently asked <span class="tw-text-[#3EA344]">questions</span>
+                        Frequently asked <span class="tw-text-brand-green">questions</span>
                     </h2>
                     <p class="tw-text-gray-600 tw-text-lg">
                         Everything you need to know about our pricing
@@ -433,7 +373,7 @@
                 <div class="tw-space-y-4">
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             How does the 14-day free trial work?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -443,7 +383,7 @@
 
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             What happens if I exceed my shipment limit?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -453,7 +393,7 @@
 
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             Can I switch plans later?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -463,7 +403,7 @@
 
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             Which carriers do you integrate with?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -473,7 +413,7 @@
 
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             Do you offer discounts for non-profits or educational institutions?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -483,7 +423,7 @@
 
                     <div class="tw-bg-white tw-rounded-lg tw-p-6 tw-shadow-md">
                         <h3 class="tw-font-semibold tw-text-lg tw-text-gray-800 tw-mb-2">
-                            <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-mr-2"></i>
+                            <i class="bi bi-question-circle tw-text-brand-blue tw-mr-2"></i>
                             Is my data secure?
                         </h3>
                         <p class="tw-text-gray-600 tw-ml-8">
@@ -506,7 +446,7 @@
             <div class="tw-mx-auto tw-max-w-[1200px]">
                 <div class="tw-text-center tw-mb-12">
                     <h2 class="tw-text-3xl tw-font-bold tw-mb-4">
-                        Why businesses <span class="tw-text-[#1A5BAB]">choose</span> Freytor
+                        Why businesses <span class="tw-text-brand-blue">choose</span> Freytor
                     </h2>
                 </div>
 
@@ -514,7 +454,7 @@
                     <div class="tw-text-center">
                         <div class="tw-flex tw-justify-center tw-mb-4">
                             <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                <i class="bi bi-shield-check tw-text-3xl tw-text-[#1A5BAB]"></i>
+                                <i class="bi bi-shield-check tw-text-3xl tw-text-brand-blue"></i>
                             </div>
                         </div>
                         <h3 class="tw-text-xl tw-font-semibold tw-mb-2">No hidden fees</h3>
@@ -526,7 +466,7 @@
                     <div class="tw-text-center">
                         <div class="tw-flex tw-justify-center tw-mb-4">
                             <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-green-100">
-                                <i class="bi bi-graph-up tw-text-3xl tw-text-[#3EA344]"></i>
+                                <i class="bi bi-graph-up tw-text-3xl tw-text-brand-green"></i>
                             </div>
                         </div>
                         <h3 class="tw-text-xl tw-font-semibold tw-mb-2">Proven ROI</h3>
@@ -538,7 +478,7 @@
                     <div class="tw-text-center">
                         <div class="tw-flex tw-justify-center tw-mb-4">
                             <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
-                                <i class="bi bi-people tw-text-3xl tw-text-[#1A5BAB]"></i>
+                                <i class="bi bi-people tw-text-3xl tw-text-brand-blue"></i>
                             </div>
                         </div>
                         <h3 class="tw-text-xl tw-font-semibold tw-mb-2">Expert support</h3>
@@ -551,10 +491,10 @@
         </section>
 
         <!-- Final CTA -->
-        <section class="tw-w-full tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-16 max-md:tw-p-8">
+        <section class="tw-w-full tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-12 max-md:tw-p-8">
             <div class="tw-mx-auto tw-max-w-[700px] tw-text-center">
                 <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
-                    Ready to <span class="tw-text-[#3EA344]">optimize</span> your logistics?
+                    Ready to <span class="tw-text-brand-green">optimize</span> your logistics?
                 </h2>
                 <p class="tw-text-lg tw-text-gray-600 tw-mb-8">
                     Join hundreds of SMEs streamlining their operations with Freytor
@@ -563,69 +503,34 @@
                     <a href="signup.html" class="btn tw-text-lg tw-px-8 tw-py-4">
                         Start Free Trial
                     </a>
-                    <a href="contact.html" class="tw-rounded-lg tw-border-2 tw-border-[#1A5BAB] tw-px-8 tw-py-4 tw-font-semibold tw-text-[#1A5BAB] tw-transition-all tw-duration-300 hover:tw-bg-[#1A5BAB] hover:tw-text-white tw-inline-flex tw-place-items-center">
+                    <a href="contact.html" class="tw-rounded-lg tw-border-2 tw-border-brand-blue tw-px-8 tw-py-4 tw-font-semibold tw-text-brand-blue tw-transition-all tw-duration-300 hover:tw-bg-brand-blue hover:tw-text-white tw-inline-flex tw-place-items-center">
                         Schedule Demo
                     </a>
                 </div>
             </div>
         </section>
 
-        <footer
-            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-p-12 tw-px-[10%] tw-text-black max-md:tw-flex-col max-md:tw-p-8"
-        >
-            <div
-                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
-            >
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    srcset=""
-                    class="tw-max-w-[120px]"
-                />
-                <div class="tw-text-center tw-text-gray-700">
-                    P.H. Colonial, Vía Israel
-                    <br />
-                    San Francisco
-                    <br />
-                    Panama City, Panama
-                </div>
-                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
-                <div class="tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-[#1A5BAB]">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-5 max-md:tw-w-full">
-                <h2 class="tw-text-3xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-xl">Resources</h2>
-                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-                    <a href="about.html" class="footer-link">About us</a>
-                    <a href="contact.html" class="footer-link">FAQ</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
-                    <a href="#" class="footer-link">Blogs</a>
-                    <a href="#" class="footer-link">Privacy policy</a>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer Component -->
+        <div id="footer-component"></div>
 
         <script src="./index.js"></script>
+        <script src="./components/components.js"></script>
         <script>
             // Toggle between Annual and Monthly
             const annualBtn = document.getElementById('annual-btn');
             const monthlyBtn = document.getElementById('monthly-btn');
 
             annualBtn.addEventListener('click', () => {
-                annualBtn.classList.add('tw-bg-[#1A5BAB]', 'tw-text-white');
+                annualBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
                 annualBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                monthlyBtn.classList.remove('tw-bg-[#1A5BAB]', 'tw-text-white');
+                monthlyBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
                 monthlyBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
             });
 
             monthlyBtn.addEventListener('click', () => {
-                monthlyBtn.classList.add('tw-bg-[#1A5BAB]', 'tw-text-white');
+                monthlyBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
                 monthlyBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                annualBtn.classList.remove('tw-bg-[#1A5BAB]', 'tw-text-white');
+                annualBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
                 annualBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
             });
         </script>

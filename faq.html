@@ -7,6 +7,7 @@
         <meta name="description" content="Frequently asked questions about Freytor logistics management platform for SMEs in emerging markets." />
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./tailwind.config.js"></script>
         <link rel="stylesheet" href="./css/index.css" />
         <link
             rel="stylesheet"
@@ -15,85 +16,24 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <script>
-            tailwind.config = {
-                prefix: 'tw-',
-                theme: {
-                    extend: {
-                        colors: {
-                            'brand-blue': '#1A5BAB',
-                            'brand-green': '#3EA344',
-                        }
-                    }
-                }
-            }
-        </script>
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         
-        <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
-        >
-            <a class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-items-center" href="index.html">
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    class="tw-h-full tw-w-full tw-object-contain"
-                />
-            </a>
-            <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
-                id="collapsed-header-items"
-            >
-                <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
-                >
-                    <a class="header-links" href="about.html"> About us </a>
-                    <a class="header-links" href="pricing.html"> Pricing </a>
-                    <a class="header-links" href="contact.html" rel="noreferrer">
-                        Contact us
-                    </a>
-                </div>
-                <div
-                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
-                >
-                    <a
-                        href="login.html"
-                        aria-label="login"
-                        class="tw-transition-colors tw-duration-[0.3s]"
-                    >
-                        Login
-                    </a>
-
-                    <a
-                        href="signup.html"
-                        aria-label="signup"
-                        class="tw-rounded-md tw-border-2 tw-border-[#1A5BAB] tw-p-1 tw-px-3 tw-font-medium tw-text-[#1A5BAB] tw-transition-all tw-duration-[0.3s] hover:tw-bg-[#1A5BAB] hover:tw-text-white"
-                    >
-                        Signup
-                    </a>
-                </div>
-            </div>
-            <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
-                onclick="toggleHeader()"
-                aria-label="menu"
-                id="collapse-btn"
-            ></button>
-        </header>
+        <!-- Header Component -->
+        <div id="header-component"></div>
 
         <main id="main-content" class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30 tw-pt-[100px] tw-px-[10%] tw-pb-12 max-md:tw-px-4 max-md:tw-pb-8">
             <div class="tw-mx-auto tw-max-w-[1000px] tw-pb-12">
-                <div class="tw-text-center tw-mb-16">
+                <div class="tw-text-center tw-mb-12">
                     <h1 class="tw-text-6xl tw-font-bold tw-mb-6 tw-leading-[1.2] max-md:tw-text-4xl">
-                        Frequently Asked <span class="tw-text-[#1A5BAB]">Questions</span>
+                        Frequently Asked <span class="tw-text-brand-blue">Questions</span>
                     </h1>
                     <p class="tw-text-2xl tw-text-gray-700 tw-mb-4 tw-leading-relaxed max-md:tw-text-xl">
                         Everything you need to know about Freytor
                     </p>
                     <p class="tw-text-gray-600 tw-text-base">
-                        Can't find the answer you're looking for? <a href="contact.html" class="tw-text-[#1A5BAB] hover:tw-underline tw-font-medium">Contact our support team</a>
+                        Can't find the answer you're looking for? <a href="contact.html" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Contact our support team</a>
                     </p>
                 </div>
 
@@ -122,7 +62,7 @@
                     <div class="faq-item" data-category="general">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">What is Freytor and who is it for?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -135,7 +75,7 @@
                     <div class="faq-item" data-category="general">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">How quickly can I get started with Freytor?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -149,7 +89,7 @@
                     <div class="faq-item" data-category="pricing">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">How does the free trial work?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -162,7 +102,7 @@
                     <div class="faq-item" data-category="pricing">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">What happens if I exceed my shipment limit?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -175,7 +115,7 @@
                     <div class="faq-item" data-category="pricing">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Can I change plans or cancel anytime?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -189,7 +129,7 @@
                     <div class="faq-item" data-category="technical">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Does Freytor integrate with my existing systems?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -202,7 +142,7 @@
                     <div class="faq-item" data-category="technical">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Is my data secure with Freytor?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -215,7 +155,7 @@
                     <div class="faq-item" data-category="technical">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Do I need technical knowledge to use Freytor?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -229,7 +169,7 @@
                     <div class="faq-item" data-category="shipping">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Which carriers does Freytor support?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -242,7 +182,7 @@
                     <div class="faq-item" data-category="shipping">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Can Freytor help me save on shipping costs?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -255,7 +195,7 @@
                     <div class="faq-item" data-category="shipping">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#3EA344] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">Can I track shipments in real-time?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -268,7 +208,7 @@
                     <div class="faq-item" data-category="general">
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-[#1A5BAB] tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
                                 <span class="tw-text-left">What kind of support do you offer?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
@@ -280,9 +220,9 @@
                 </div>
 
                 <!-- Still have questions CTA -->
-                <div class="tw-mt-16 tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-12 tw-rounded-xl tw-text-center max-md:tw-p-8">
+                <div class="tw-mt-12 tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-12 tw-rounded-xl tw-text-center max-md:tw-p-8">
                     <h2 class="tw-text-3xl tw-font-bold tw-mb-4">
-                        Still have <span class="tw-text-[#1A5BAB]">questions?</span>
+                        Still have <span class="tw-text-brand-blue">questions?</span>
                     </h2>
                     <p class="tw-text-gray-700 tw-mb-6 tw-text-lg">
                         Our support team is here to help you get started
@@ -291,7 +231,7 @@
                         <a href="contact.html" class="btn tw-text-lg tw-px-8 tw-py-4">
                             Contact Support
                         </a>
-                        <a href="signup.html" class="tw-rounded-lg tw-border-2 tw-border-[#1A5BAB] tw-px-8 tw-py-4 tw-font-semibold tw-text-[#1A5BAB] tw-transition-all tw-duration-300 hover:tw-bg-[#1A5BAB] hover:tw-text-white tw-inline-flex tw-place-items-center">
+                        <a href="signup.html" class="tw-rounded-lg tw-border-2 tw-border-brand-blue tw-px-8 tw-py-4 tw-font-semibold tw-text-brand-blue tw-transition-all tw-duration-300 hover:tw-bg-brand-blue hover:tw-text-white tw-inline-flex tw-place-items-center">
                             Start Free Trial
                         </a>
                     </div>
@@ -299,47 +239,11 @@
             </div>
         </main>
 
-        <footer
-            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-p-12 tw-px-[10%] tw-text-black max-md:tw-flex-col max-md:tw-p-8"
-        >
-            <div
-                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
-            >
-                <img
-                    src="./assets/logo/logo1.png"
-                    alt="Freytor logo"
-                    srcset=""
-                    class="tw-max-w-[120px]"
-                />
-                <div class="tw-text-center tw-text-gray-700">
-                    P.H. Colonial, Vía Israel
-                    <br />
-                    San Francisco
-                    <br />
-                    Panama City, Panama
-                </div>
-                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
-                <div class="tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-[#1A5BAB]">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-5 max-md:tw-w-full">
-                <h2 class="tw-text-3xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-xl">Resources</h2>
-                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-                    <a href="about.html" class="footer-link">About us</a>
-                    <a href="faq.html" class="footer-link">FAQ</a>
-                    <a href="contact.html" class="footer-link">Contact Us</a>
-                    <a href="blog.html" class="footer-link">Blog</a>
-                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                    <a href="terms.html" class="footer-link">Terms of Service</a>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer Component -->
+        <div id="footer-component"></div>
 
         <script src="./index.js"></script>
+        <script src="./components/components.js"></script>
         <script src="./faq.js"></script>
     </body>
 </html>

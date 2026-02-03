@@ -146,6 +146,171 @@ header > .collapsible-header{
     color: var(--brand-blue);
 }
 
+/* ============================================
+   REUSABLE CARD COMPONENTS
+   ============================================ */
+
+/* Base card - white bg with shadow */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Card with blue accent border */
+.card-blue {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(26, 91, 171, 0.1);
+    border: 2px solid rgba(26, 91, 171, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-blue:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 8px 25px rgba(26, 91, 171, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Card with green accent border */
+.card-green {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(62, 163, 68, 0.1);
+    border: 2px solid rgba(62, 163, 68, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-green:hover {
+    border-color: var(--brand-green);
+    box-shadow: 0 8px 25px rgba(62, 163, 68, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Feature card - used for feature showcases */
+.card-feature {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(26, 91, 171, 0.1);
+    border: 2px solid rgba(26, 91, 171, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card-feature:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 12px 30px rgba(26, 91, 171, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Pricing card */
+.card-pricing {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(26, 91, 171, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-pricing:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 12px 40px rgba(26, 91, 171, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Pricing card - highlighted/popular */
+.card-pricing-featured {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(62, 163, 68, 0.2);
+    border: 2px solid var(--brand-green);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-pricing-featured:hover {
+    box-shadow: 0 16px 50px rgba(62, 163, 68, 0.25);
+    transform: translateY(-4px);
+}
+
+/* Gradient card - for CTA sections */
+.card-gradient {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    color: white;
+}
+
+/* Icon circle - for card icons */
+.icon-circle {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-circle-blue {
+    background-color: rgba(26, 91, 171, 0.1);
+    color: var(--brand-blue);
+}
+
+.icon-circle-green {
+    background-color: rgba(62, 163, 68, 0.1);
+    color: var(--brand-green);
+}
+
+.icon-circle-lg {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* ============================================
+   SPACING UTILITIES (Standardized Scale)
+   Scale: 4, 8, 12, 16, 24, 32, 48, 64
+   ============================================ */
+
+/* Section spacing */
+.section-padding {
+    padding: 3rem 10%;
+}
+
+.section-padding-lg {
+    padding: 4rem 10%;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 2rem 1rem;
+    }
+    .section-padding-lg {
+        padding: 2.5rem 1rem;
+    }
+}
+
+/* Standard gaps */
+.gap-sm { gap: 0.75rem; }  /* 12px */
+.gap-md { gap: 1rem; }     /* 16px */
+.gap-lg { gap: 1.5rem; }   /* 24px */
+.gap-xl { gap: 2rem; }     /* 32px */
+
+/* ============================================
+   END CARD & SPACING COMPONENTS
+   ============================================ */
+
 
 .review-container {
     position: relative;
