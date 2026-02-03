@@ -7,46 +7,68 @@ let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
 const collapseBtn = document.getElementById("collapse-btn")
 const collapseHeaderItems = document.getElementById("collapsed-header-items")
 
-
-
 function onHeaderClickOutside(e) {
-
-    if (!collapseHeaderItems.contains(e.target)) {
+    if (!collapseHeaderItems.contains(e.target) && !collapseBtn.contains(e.target)) {
         toggleHeader()
     }
-
 }
-
 
 function toggleHeader() {
     if (isHeaderCollapsed) {
-        // collapseHeaderItems.classList.remove("max-md:tw-opacity-0")
-        collapseHeaderItems.classList.add("opacity-100",)
+        // Open menu with smooth animation
+        collapseHeaderItems.classList.add("opacity-100")
         collapseHeaderItems.style.width = "60vw"
+        collapseHeaderItems.style.transition = "width 0.3s ease-in-out, opacity 0.3s ease-in-out"
         collapseBtn.classList.remove("bi-list")
         collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
         isHeaderCollapsed = false
 
-        setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
-
+        setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 10)
     } else {
+        // Close menu with smooth animation
         collapseHeaderItems.classList.remove("opacity-100")
         collapseHeaderItems.style.width = "0vw"
         collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
         collapseBtn.classList.add("bi-list")
         isHeaderCollapsed = true
         window.removeEventListener("click", onHeaderClickOutside)
-
     }
 }
 
 function responsive() {
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.width = ""
-
+        collapseHeaderItems.style.transition = ""
+        collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
+        collapseBtn.classList.add("bi-list")
+        isHeaderCollapsed = false
+        window.removeEventListener("click", onHeaderClickOutside)
     } else {
-        isHeaderCollapsed = true
+        if (!isHeaderCollapsed) {
+            collapseHeaderItems.style.width = "0vw"
+            collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
+            collapseBtn.classList.add("bi-list")
+            isHeaderCollapsed = true
+        }
     }
 }
 
 window.addEventListener("resize", responsive)
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href')
+        if (href !== '#' && href !== '#!') {
+            e.preventDefault()
+            const target = document.querySelector(href)
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            }
+        }
+    })
+})
+

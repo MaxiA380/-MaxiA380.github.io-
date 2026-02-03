@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login - Freytor</title>
+        <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./css/index.css" />
+        <script>
+            tailwind.config = {
+                prefix: 'tw-',
+                theme: {
+                    extend: {
+                        colors: {
+                            'brand-blue': '#1A5BAB',
+                            'brand-green': '#3EA344',
+                        }
+                    }
+                }
+            }
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30">
+        <header
+            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-transparent tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+        >
+            <a class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-items-center" href="index.html">
+                <img
+                    src="./assets/logo/logo1.png"
+                    alt="Freytor logo"
+                    class="tw-h-full tw-w-full tw-object-contain"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="about.html"> About us </a>
+                    <a class="header-links" href="pricing.html"> Pricing </a>
+                    <a class="header-links" href="contact.html" rel="noreferrer">
+                        Contact us
+                    </a>
+                </div>
+                <div
+                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        href="login.html"
+                        aria-label="login"
+                        class="tw-transition-colors tw-duration-[0.3s]"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="signup.html"
+                        aria-label="signup"
+                        class="tw-rounded-md tw-border-2 tw-border-[#1A5BAB] tw-p-1 tw-px-3 tw-font-medium tw-text-[#1A5BAB] tw-transition-all tw-duration-[0.3s] hover:tw-bg-[#1A5BAB] hover:tw-text-white"
+                    >
+                        Signup
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section class="tw-flex tw-min-h-[100vh] tw-w-full tw-items-center tw-justify-center tw-p-4">
+            <div class="tw-w-full tw-max-w-[480px]">
+                <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-10 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-shadow-2xl max-md:tw-p-6">
+                    <div class="tw-text-center tw-mb-8">
+                        <div class="tw-flex tw-justify-center tw-mb-4">
+                            <div class="tw-flex tw-h-16 tw-w-16 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-blue-100">
+                                <i class="bi bi-person-circle tw-text-4xl tw-text-[#1A5BAB]"></i>
+                            </div>
+                        </div>
+                        <h1 class="tw-text-5xl tw-font-bold tw-mb-3 tw-leading-[1.2]">
+                            Welcome <span class="tw-text-[#1A5BAB]">Back</span>
+                        </h1>
+                        <p class="tw-text-gray-600 tw-text-lg">Sign in to your Freytor account</p>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div id="login-message" class="tw-hidden tw-mb-6 tw-p-4 tw-rounded-lg"></div>
+
+                    <form id="login-form" class="tw-space-y-6">
+                        <div>
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                                Email Address *
+                            </label>
+                            <div class="tw-relative">
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="input tw-w-full tw-rounded-lg tw-pl-10"
+                                    placeholder="you@example.com"
+                                />
+                                <i class="bi bi-envelope tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
+                            </div>
+                            <span class="tw-text-red-500 tw-text-sm tw-hidden" id="email-error"></span>
+                        </div>
+
+                        <div>
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                                Password *
+                            </label>
+                            <div class="tw-relative">
+                                <input 
+                                    type="password" 
+                                    id="password"
+                                    name="password"
+                                    required
+                                    class="input tw-w-full tw-rounded-lg tw-pl-10 tw-pr-10"
+                                    placeholder="Enter your password"
+                                />
+                                <i class="bi bi-lock tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
+                                <button type="button" onclick="togglePassword('password')" class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400 hover:tw-text-gray-600">
+                                    <i class="bi bi-eye" id="password-toggle"></i>
+                                </button>
+                            </div>
+                            <span class="tw-text-red-500 tw-text-sm tw-hidden" id="password-error"></span>
+                        </div>
+
+                        <div class="tw-flex tw-items-center tw-justify-between tw-flex-wrap tw-gap-2">
+                            <label class="tw-flex tw-items-center tw-cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    name="remember"
+                                    class="tw-w-4 tw-h-4 tw-text-[#1A5BAB] tw-border-gray-300 tw-rounded focus:tw-ring-[#1A5BAB] tw-cursor-pointer"
+                                />
+                                <span class="tw-ml-2 tw-text-sm tw-text-gray-600">Remember me</span>
+                            </label>
+                            <a href="#" class="tw-text-sm tw-text-[#1A5BAB] hover:tw-underline tw-font-medium">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <button type="submit" id="login-btn" class="btn tw-w-full tw-justify-center tw-text-lg tw-py-4">
+                            <span id="login-btn-text">Sign In</span>
+                            <span id="login-btn-spinner" class="tw-hidden">
+                                <i class="bi bi-arrow-repeat tw-animate-spin tw-mr-2"></i>
+                                Signing in...
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="tw-mt-8">
+                        <div class="tw-relative">
+                            <div class="tw-absolute tw-inset-0 tw-flex tw-items-center">
+                                <div class="tw-w-full tw-border-t tw-border-gray-200"></div>
+                            </div>
+                            <div class="tw-relative tw-flex tw-justify-center tw-text-sm">
+                                <span class="tw-px-3 tw-bg-white tw-text-gray-500 tw-font-medium">Or continue with</span>
+                            </div>
+                        </div>
+
+                        <div class="tw-mt-6 tw-grid tw-grid-cols-2 tw-gap-4">
+                            <button type="button" onclick="socialLogin('google')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-[#1A5BAB] hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
+                                <i class="bi bi-google tw-text-lg tw-mr-2"></i>
+                                Google
+                            </button>
+                            <button type="button" onclick="socialLogin('microsoft')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-[#1A5BAB] hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
+                                <i class="bi bi-microsoft tw-text-lg tw-mr-2"></i>
+                                Microsoft
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="tw-mt-8 tw-text-center tw-text-sm tw-text-gray-600">
+                        Don't have an account?
+                        <a href="signup.html" class="tw-font-bold tw-text-[#1A5BAB] hover:tw-underline">
+                            Sign up for free
+                        </a>
+                    </p>
+
+                    <!-- Trust Badges -->
+                    <div class="tw-mt-8 tw-pt-6 tw-border-t tw-border-gray-100">
+                        <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-flex-wrap tw-text-xs tw-text-gray-500">
+                            <div class="tw-flex tw-items-center tw-gap-2">
+                                <i class="bi bi-shield-check tw-text-[#3EA344] tw-text-lg"></i>
+                                <span>256-bit SSL</span>
+                            </div>
+                            <div class="tw-flex tw-items-center tw-gap-2">
+                                <i class="bi bi-lock-fill tw-text-[#3EA344] tw-text-lg"></i>
+                                <span>SOC 2 Compliant</span>
+                            </div>
+                            <div class="tw-flex tw-items-center tw-gap-2">
+                                <i class="bi bi-patch-check-fill tw-text-[#3EA344] tw-text-lg"></i>
+                                <span>GDPR Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tw-mt-6 tw-text-center tw-text-sm tw-text-gray-600">
+                    <a href="index.html" class="hover:tw-text-[#1A5BAB] tw-transition-colors tw-font-medium">
+                        <i class="bi bi-arrow-left tw-mr-1"></i> Back to home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <script src="./index.js"></script>
+        <script src="./auth.js"></script>
+    </body>
+</html>

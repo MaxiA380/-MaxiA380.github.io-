@@ -19,9 +19,21 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="" />
 
-        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css">
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="./css/index.css" />
+        <script>
+            tailwind.config = {
+                prefix: 'tw-',
+                theme: {
+                    extend: {
+                        colors: {
+                            'brand-blue': '#1A5BAB',
+                            'brand-green': '#3EA344',
+                        }
+                    }
+                }
+            }
+        </script>
 
         <link
             rel="stylesheet"
@@ -35,11 +47,11 @@
         <header
             class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
         >
-            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+            <a class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-items-center" href="index.html">
                 <img
                     src="./assets/logo/logo1.png"
-                    alt="logo"
-                    class="tw-object tw-h-full tw-w-full"
+                    alt="Freytor logo"
+                    class="tw-h-full tw-w-full tw-object-contain"
                 />
             </a>
             <div
@@ -49,10 +61,9 @@
                 <div
                     class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
                 >
-                    <a class="header-links" href=""> About us </a>
-                    <a class="header-links" href=""> Pricing </a>
-                    <a class="header-links" href=""> Blogs </a>
-                    <a class="header-links" href="" rel="noreferrer">
+                    <a class="header-links" href="about.html"> About us </a>
+                    <a class="header-links" href="pricing.html"> Pricing </a>
+                    <a class="header-links" href="contact.html" rel="noreferrer">
                         Contact us
                     </a>
                 </div>
@@ -60,7 +71,7 @@
                     class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
                 >
                     <a
-                        href=""
+                        href="login.html"
                         aria-label="login"
                         class="tw-transition-colors tw-duration-[0.3s]"
                     >
@@ -68,9 +79,9 @@
                     </a>
 
                     <a
-                        href=""
+                        href="signup.html"
                         aria-label="signup"
-                        class="tw-rounded-sm tw-border-2 tw-border-[#1c1c1c] tw-p-1 tw-px-2 tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+                        class="tw-rounded-md tw-border-2 tw-border-[#1A5BAB] tw-p-1 tw-px-3 tw-font-medium tw-text-[#1A5BAB] tw-transition-all tw-duration-[0.3s] hover:tw-bg-[#1A5BAB] hover:tw-text-white"
                     >
                         Signup
                     </a>
@@ -85,7 +96,7 @@
         </header>
 
         <section
-            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
+            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30 max-lg:tw-p-4 max-md:tw-mt-[50px]"
         >
             <div
                 class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-flex-col max-xl:tw-place-items-center"
@@ -94,55 +105,38 @@
                     class="tw-flex tw-min-w-[450px] tw-max-w-[800px] tw-flex-col tw-place-content-center max-xl:tw-min-w-[250px]"
                 >
                     <div
-                        class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                        class="tw-flex tw-flex-wrap tw-text-6xl tw-font-bold tw-uppercase tw-leading-[1.2] max-lg:tw-text-4xl max-lg:tw-leading-[1.3]"
                     >
-                        Empower your finance
+                        <span class="tw-text-[#1A5BAB]">Track.</span>&nbsp;<span class="tw-text-[#3EA344]">Route.</span>&nbsp;<span class="tw-text-[#1A5BAB]">Deliver.</span>
                         <br />
-                        with seamless,
-                        <br />
-                        cloud-based control.
+                        <span class="tw-text-gray-900 tw-font-extrabold">Without the chaos.</span>
                     </div>
                     <div
                         class="reveal tw-mt-10 tw-p-2 tw-text-justify max-lg:tw-max-w-full"
                     >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Error adipisci corrupti accusamus reiciendis
-                        similique assumenda nostrum fuga dicta vitae ipsum.
+                        Replace spreadsheets, WhatsApp chaos, and fragmented carrier portals with one simple dashboard. Lightweight logistics for SMEs in emerging markets.
                     </div>
 
-                    <h2 class="reveal tw-mt-6 tw-text-lg">Get started</h2>
+                    <h2 class="reveal tw-mt-8 tw-text-xl tw-font-semibold tw-text-gray-700">Get started today</h2>
                     <div
-                        class="reveal tw-mt-4 tw-flex tw-h-[50px] tw-w-[350px] tw-max-w-[350px] tw-place-items-center tw-gap-2 tw-overflow-hidden"
+                        class="reveal tw-mt-4 tw-flex tw-h-[56px] tw-w-full tw-max-w-[450px] tw-place-items-stretch tw-gap-3 tw-overflow-hidden"
                     >
                         <input
                             type="email"
-                            class="input tw-h-full tw-w-full tw-rounded-md tw-border-[2px] tw-border-solid tw-border-[#bfbfbf] tw-bg-transparent tw-p-2 tw-px-3 tw-outline-none tw-transition-colors tw-duration-[0.3s]"
+                            class="input tw-h-full tw-flex-1 tw-rounded-lg"
                             placeholder="joe@example.com"
                         />
                         <a
-                            class="btn tw-h-full tw-transition-colors tw-duration-[0.3s]"
-                            href=""
+                            class="btn tw-h-full tw-px-8 tw-transition-all tw-duration-[0.3s]"
+                            href="signup.html"
                         >
-                            Signup
+                            Get Started
                         </a>
                     </div>
 
                     <div class="reveal tw-mt-6 tw-flex tw-gap-4 tw-text-2xl">
-                        <a href="" aria-label="LinkedIn">
+                        <a href="" aria-label="LinkedIn" class="tw-text-gray-600 tw-transition-colors hover:tw-text-[#1A5BAB]">
                             <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a
-                            href="https://twitter.com/@pauls_freeman"
-                            aria-label="Twitter"
-                        >
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a
-                            href="https://instagram.com/"
-                            class="tw-h-[40px] tw-w-[40px]"
-                            aria-label="Tripadvisor"
-                        >
-                            <i class="bi bi-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -167,43 +161,47 @@
             </div>
         </section>
         <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-bg-gradient-to-r tw-from-blue-50 tw-to-green-50 tw-p-12"
         >
-            <h2 class="tw-text-3xl tw-text-[#5d5d5d] max-lg:tw-text-2xl">
+            <h2 class="tw-text-3xl tw-text-[#1A5BAB] tw-font-semibold max-lg:tw-text-2xl tw-mb-6">
                 Trusted by industry leaders
             </h2>
 
             <div
-                class="tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-gap-10"
+                class="tw-mt-4 tw-flex tw-w-full tw-max-w-[900px] tw-place-content-center tw-place-items-center tw-flex-wrap tw-gap-12"
             >
-                <div class="tw-h-[50px] tw-w-[150px]">
+                <div class="tw-h-[60px] tw-w-[180px] tw-transition-all tw-duration-300 hover:tw-scale-110 hover:tw-grayscale-0">
                     <img
-                        src="./assets/images/brand-logos/google.svg"
-                        alt="Google"
-                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                        srcset=""
+                        src="./assets/images/brand-logos/logoipsum-311.png"
+                        alt="Partner company logo"
+                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale hover:tw-grayscale-0"
                     />
                 </div>
-                <div class="tw-h-[50px] tw-w-[150px]">
+                <div class="tw-h-[60px] tw-w-[180px] tw-transition-all tw-duration-300 hover:tw-scale-110 hover:tw-grayscale-0">
                     <img
-                        src="./assets/images/brand-logos/microsoft.svg"
-                        alt="Microsoft"
-                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                        srcset=""
+                        src="./assets/images/brand-logos/logoipsum-416.png"
+                        alt="Partner company logo"
+                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale hover:tw-grayscale-0"
                     />
                 </div>
-                <div class="tw-h-[50px] tw-w-[150px]">
+                <div class="tw-h-[60px] tw-w-[180px] tw-transition-all tw-duration-300 hover:tw-scale-110 hover:tw-grayscale-0">
                     <img
-                        src="./assets/images/brand-logos/adobe.svg"
-                        alt="Adobe"
-                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                        srcset=""
+                        src="./assets/images/brand-logos/logoipsum-311.png"
+                        alt="Partner company logo"
+                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale hover:tw-grayscale-0"
+                    />
+                </div>
+                <div class="tw-h-[60px] tw-w-[180px] tw-transition-all tw-duration-300 hover:tw-scale-110 hover:tw-grayscale-0">
+                    <img
+                        src="./assets/images/brand-logos/logoipsum-416.png"
+                        alt="Partner company logo"
+                        class="tw-h-full tw-w-full tw-object-contain tw-grayscale hover:tw-grayscale-0"
                     />
                 </div>
             </div>
         </section>
         <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-12 max-md:tw-p-8"
         >
             <div
                 class="tw-flex tw-max-w-[750px] tw-flex-col tw-gap-5 tw-text-center"
@@ -211,84 +209,89 @@
                 <h2
                     class="tw-mt-5 tw-text-4xl tw-font-semibold max-lg:tw-text-3xl"
                 >
-                    A unique technology for your account needs
+                    Simple logistics technology built for <span class="tw-text-[#3EA344]">SMEs</span>
                 </h2>
 
                 <div class="tw-text-gray-700">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Temporibus consequatur odit exercitationem repellendus,
-                    recusandae ratione at tenetur, omnis dicta tempore dolor
-                    saepe quos doloremque tempora quibusdam. Aspernatur deserunt
-                    voluptatem aliquid.
+                    Freytor brings enterprise-level logistics capabilities to small and medium businesses in emerging markets. Monitor shipments across multiple carriers, optimize delivery routes, and manage inventory—all from one intuitive dashboard designed for teams on the go.
                 </div>
             </div>
         </section>
 
         <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-12 max-md:tw-p-8"
             id=""
         >
             <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-5">
                 <h2 class="tw-mt-5 tw-text-4xl tw-font-semibold">
-                    Features for error free accounting
+                    Core features that <span class="tw-text-[#1A5BAB]">simplify</span> logistics
                 </h2>
 
                 <div class="tw-flex tw-gap-6 max-lg:tw-flex-col">
                     <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+                        class="tw-flex tw-h-[420px] tw-w-[350px] tw-flex-col tw-gap-3 tw-rounded-xl tw-border-2 tw-border-blue-100 tw-bg-white tw-p-6 tw-shadow-lg tw-transition-all tw-duration-300 hover:tw-border-[#1A5BAB] hover:tw-shadow-2xl hover:tw--translate-y-2"
                     >
                         <div
                             class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
                         >
                             <img
                                 src="./assets/images/home/sample.jpg"
-                                alt="feature1"
+                                alt="Shipment tracking dashboard"
+                                class="tw-h-full tw-w-full tw-object-cover"
                             />
                         </div>
-                        <h3 class="tw-text-2xl">Feature 1</h3>
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Quos, voluptates numquam quam expedita
-                            mollitia possimus. Quos tempora placeat pariatur
-                            est!
+                        <div class="tw-flex tw-place-items-center tw-gap-3">
+                            <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-lg tw-bg-blue-100 tw-text-2xl">
+                                <i class="bi bi-box-seam tw-text-[#1A5BAB]"></i>
+                            </div>
+                            <h3 class="tw-text-2xl tw-font-semibold tw-text-[#1A5BAB]">Shipment Tracking</h3>
+                        </div>
+                        <div class="tw-text-gray-600 tw-leading-relaxed">
+                            Monitor all your shipments across multiple carriers in one centralized dashboard. Get real-time updates and never lose track of packages again.
                         </div>
                     </div>
                     <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+                        class="tw-flex tw-h-[420px] tw-w-[350px] tw-flex-col tw-gap-3 tw-rounded-xl tw-border-2 tw-border-green-100 tw-bg-white tw-p-6 tw-shadow-lg tw-transition-all tw-duration-300 hover:tw-border-[#3EA344] hover:tw-shadow-2xl hover:tw--translate-y-2"
                     >
                         <div
                             class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
                         >
                             <img
                                 src="./assets/images/home/sample.jpg"
-                                alt="feature2"
+                                alt="Route optimization map"
+                                class="tw-h-full tw-w-full tw-object-cover"
                             />
                         </div>
-                        <h3 class="tw-text-2xl">Feature 2</h3>
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Quos, voluptates numquam quam expedita
-                            mollitia possimus. Quos tempora placeat pariatur
-                            est!
+                        <div class="tw-flex tw-place-items-center tw-gap-3">
+                            <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-lg tw-bg-green-100 tw-text-2xl">
+                                <i class="bi bi-map tw-text-[#3EA344]"></i>
+                            </div>
+                            <h3 class="tw-text-2xl tw-font-semibold tw-text-[#3EA344]">Route Optimization</h3>
+                        </div>
+                        <div class="tw-text-gray-600 tw-leading-relaxed">
+                            Reduce fuel costs by 10-15% with intelligent route planning. Our algorithms find the most efficient paths for your deliveries automatically.
                         </div>
                     </div>
                     <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+                        class="tw-flex tw-h-[420px] tw-w-[350px] tw-flex-col tw-gap-3 tw-rounded-xl tw-border-2 tw-border-blue-100 tw-bg-white tw-p-6 tw-shadow-lg tw-transition-all tw-duration-300 hover:tw-border-[#1A5BAB] hover:tw-shadow-2xl hover:tw--translate-y-2"
                     >
                         <div
                             class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
                         >
                             <img
                                 src="./assets/images/home/sample.jpg"
-                                alt="feature3"
+                                alt="Inventory management dashboard"
+                                class="tw-h-full tw-w-full tw-object-cover"
                             />
                         </div>
-                        <h3 class="tw-text-2xl">Feature 3</h3>
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Quos, voluptates numquam quam expedita
-                            mollitia possimus. Quos tempora placeat pariatur
-                            est!
+                        <div class="tw-flex tw-place-items-center tw-gap-3">
+                            <div class="tw-flex tw-h-12 tw-w-12 tw-place-items-center tw-place-content-center tw-rounded-lg tw-bg-blue-100 tw-text-2xl">
+                                <i class="bi bi-bar-chart-line tw-text-[#1A5BAB]"></i>
+                            </div>
+                            <h3 class="tw-text-2xl tw-font-semibold tw-text-[#1A5BAB]">Inventory Alerts</h3>
+                        </div>
+                        <div class="tw-text-gray-600 tw-leading-relaxed">
+                            Stay ahead of stockouts with smart inventory monitoring. Receive automated alerts when stock levels run low, preventing costly delays.
                         </div>
                     </div>
                 </div>
@@ -296,25 +299,28 @@
         </section>
 
         <section
-            class="tw-flex tw-min-h-[30vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-overflow-hidden tw-p-4 tw-px-[10%] max-md:tw-flex-col"
+            class="tw-flex tw-min-h-[30vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-8 tw-overflow-hidden tw-bg-white tw-p-12 tw-px-[10%] max-md:tw-flex-col max-md:tw-p-8"
         >
-            <h2 class="tw-text-3xl max-md:tw-text-2xl">Want to learn more?</h2>
+            <h2 class="tw-text-4xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-2xl">Want to learn more?</h2>
+            <p class="tw-text-lg tw-text-gray-600 tw-text-center max-w-[600px]">
+                See how Freytor can transform your logistics operations. Schedule a personalized demo with our team.
+            </p>
 
             <a
-                href="https://"
-                class="btn tw-mt-[2%] tw-duration-[0.3s] hover:tw-scale-105 max-md:tw-mt-8"
+                href="contact.html"
+                class="btn tw-mt-4 tw-text-lg tw-duration-[0.3s] hover:tw-scale-105"
             >
                 Schedule a call
             </a>
         </section>
 
         <section
-            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-12 max-md:tw-p-8"
         >
             <h3
-                class="primary-text-color tw-text-3xl tw-font-medium max-md:tw-text-xl"
+                class="tw-text-3xl tw-font-medium max-md:tw-text-xl"
             >
-                What some of our clients say
+                What some of our <span class="tw-text-[#3EA344]">clients</span> say
             </h3>
 
             <div
@@ -322,28 +328,34 @@
             >
                 <style>
                     .swiper-pagination-bullet {
-                        width: 20px;
-                        height: 20px;
+                        width: 24px;
+                        height: 24px;
                         text-align: center;
-                        line-height: 20px;
-                        font-size: 12px;
+                        line-height: 24px;
+                        font-size: 14px;
                         color: #000;
                         opacity: 1;
-                        background: rgba(0, 0, 0, 0.2);
+                        background: rgba(26, 91, 171, 0.25);
                     }
                     .swiper-pagination-bullet:hover {
                         color: #000;
                         opacity: 1;
-                        background: #1f1c1cbd;
+                        background: rgba(26, 91, 171, 0.5);
                     }
 
                     .swiper-pagination-bullet-active {
-                        //color: #fff;
-                        background: #000 !important;
+                        background: linear-gradient(135deg, #1A5BAB 0%, #3EA344 100%) !important;
                     }
 
                     .swiper {
-                        padding: 10px !important;
+                        padding: 15px !important;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .swiper-pagination-bullet {
+                            width: 32px;
+                            height: 32px;
+                        }
                     }
                 </style>
 
@@ -354,7 +366,7 @@
                         class="swiper-slide review-card tw-relative tw-flex tw-flex-col tw-text-justify"
                     >
                         <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
+                            class="tw-h-[60px] tw-w-[60px] tw-overflow-hidden tw-rounded-full tw-border-[3px] tw-border-solid tw-border-[#1A5BAB]"
                         >
                             <img
                                 src="./assets/images/people/women.jpg"
@@ -364,17 +376,16 @@
                         </div>
 
                         <p class="tw-mt-4 tw-italic tw-text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Beatae, vero.
+                            "Freytor replaced our messy spreadsheets and WhatsApp groups. Now we track everything in one place. Game changer for our small team!"
                         </p>
-                        <p class="tw-mt-3">- Trich B</p>
+                        <p class="tw-mt-3 tw-font-semibold tw-text-gray-800">- Sarah M., Operations Manager</p>
                     </div>
 
                     <div
                         class="swiper-slide review-card slides tw-text-justify"
                     >
                         <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
+                            class="tw-h-[60px] tw-w-[60px] tw-overflow-hidden tw-rounded-full tw-border-[3px] tw-border-solid tw-border-[#1A5BAB]"
                         >
                             <img
                                 src="./assets/images/people/man.jpg"
@@ -383,17 +394,16 @@
                             />
                         </div>
                         <p class="tw-mt-5 tw-italic tw-text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Consequatur, porro!
+                            "The route optimization alone saved us 12% on fuel costs in the first month. Simple to use, massive impact on our bottom line."
                         </p>
-                        <p class="tw-mt-3">- Bára Müllerová</p>
+                        <p class="tw-mt-3 tw-font-semibold tw-text-gray-800">- Carlos R., Logistics Coordinator</p>
                     </div>
 
                     <div
                         class="swiper-slide review-card slides tw-text-justify"
                     >
                         <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
+                            class="tw-h-[60px] tw-w-[60px] tw-overflow-hidden tw-rounded-full tw-border-[3px] tw-border-solid tw-border-[#1A5BAB]"
                         >
                             <img
                                 src="./assets/images/people/man2.jpg"
@@ -403,9 +413,9 @@
                         </div>
 
                         <p class="tw-mt-5 tw-italic tw-text-gray-600">
-                            Lorem ipsum dolor sit amet.
+                            "Finally, a logistics tool built for businesses like ours. Affordable, mobile-friendly, and actually works in emerging markets."
                         </p>
-                        <p class="tw-mt-3">- Matt freeman</p>
+                        <p class="tw-mt-3 tw-font-semibold tw-text-gray-800">- Priya K., Supply Chain Lead</p>
                     </div>
                 </div>
 
@@ -415,84 +425,72 @@
         </section>
 
         <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-bg-gradient-to-br tw-from-blue-50 tw-to-green-50 tw-p-16 tw-px-[10%] max-md:tw-p-8"
         >
             <div
-                class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-3"
+                class="tw-flex tw-w-full tw-max-w-[600px] tw-flex-col tw-place-content-center tw-place-items-center tw-gap-4 tw-text-center"
             >
-                <h2 class="primary-text-color tw-text-2xl max-md:tw-text-xl">
-                    Special Newsletter signup
+                <h2 class="tw-text-4xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-2xl">
+                    Ready to streamline your logistics?
                 </h2>
-                <h2 class="tw-text-xl max-md:tw-text-lg">
-                    Keep yourself updated
-                </h2>
+                <p class="tw-text-lg tw-text-gray-600 max-md:tw-text-base">
+                    Join hundreds of SMEs already optimizing their delivery operations
+                </p>
 
                 <div
-                    class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-overflow-hidden tw-p-2"
+                    class="tw-mt-4 tw-flex tw-h-[56px] tw-w-full tw-max-w-[450px] tw-place-items-stretch tw-gap-3"
                 >
                     <input
                         type="email"
-                        class="input tw-h-full tw-w-full tw-p-2"
-                        placeholder="email"
+                        class="input tw-h-full tw-flex-1 tw-rounded-lg tw-bg-white"
+                        placeholder="Enter your email"
                     />
                     <a
-                        class="btn tw-transition-colors tw-duration-[0.3s]"
-                        href=""
+                        class="btn tw-h-full tw-px-8 tw-transition-all tw-duration-[0.3s]"
+                        href="signup.html"
                     >
-                        Signup
+                        Start Free Trial
                     </a>
                 </div>
+                <p class="tw-mt-2 tw-text-sm tw-text-gray-500">No credit card required • 14-day free trial</p>
             </div>
         </section>
 
         <footer
-            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-p-12 tw-px-[10%] tw-text-black max-md:tw-flex-col max-md:tw-p-8"
         >
             <div
                 class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
             >
                 <img
                     src="./assets/logo/logo1.png"
-                    alt="logo"
+                    alt="Freytor logo"
                     srcset=""
                     class="tw-max-w-[120px]"
                 />
-                <div>
-                    2 Lord Edward St,
+                <div class="tw-text-center tw-text-gray-700">
+                    P.H. Colonial, Vía Israel
                     <br />
-                    D02 P634,
+                    San Francisco
                     <br />
-                    United Kingdom
+                    Panama City, Panama
                 </div>
-                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us</div>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
                 <div class="tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a
-                        href="https://twitter.com/@pauls_freeman"
-                        aria-label="Twitter"
-                    >
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a
-                        href="https://instagram.com/"
-                        class="tw-h-[40px] tw-w-[40px]"
-                        aria-label="Instagram"
-                    >
-                        <i class="bi bi-instagram"></i>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-[#1A5BAB]">
+                        <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
-                <h2 class="tw-text-3xl max-md:tw-text-xl">Resources</h2>
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-5 max-md:tw-w-full">
+                <h2 class="tw-text-3xl tw-text-[#1A5BAB] tw-font-bold max-md:tw-text-xl">Resources</h2>
                 <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-                    <a href="" class="footer-link">About us</a>
-                    <a href="" class="footer-link">FAQ</a>
-                    <a href="" class="footer-link">Contact Us</a>
-                    <a href="" class="footer-link">Blogs</a>
-                    <a href="" class="footer-link">Privacy policy</a>
+                    <a href="about.html" class="footer-link">About us</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Blogs</a>
+                    <a href="#" class="footer-link">Privacy policy</a>
                 </div>
             </div>
         </footer>

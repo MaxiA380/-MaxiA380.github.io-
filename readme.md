@@ -14,13 +14,6 @@ A sleek, responsive landing page for Freytor, a lightweight logistics SaaS built
 
 Visit the live site: [https://MaxiA380.github.io/Logistics_App/](https://MaxiA380.github.io/Logistics_App/)
 
-## 💼 Target Market
-
-Freytor is designed for **SMEs in emerging markets** (LATAM, Africa, SE Asia, Middle East) where logistics operations are often chaotic due to:
-- Fragmented tools and high informality
-- Limited budgets for enterprise solutions
-- Reliance on spreadsheets and WhatsApp for operations
-- Need for quick setup (under 10 minutes) and mobile accessibility
 
 ## 🛠️ Technologies Used
 
