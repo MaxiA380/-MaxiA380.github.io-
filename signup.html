@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'" />
         <title>Sign Up - Freytor</title>
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -179,8 +180,13 @@
                                 class="tw-w-4 tw-h-4 tw-mt-1 tw-text-brand-blue tw-border-gray-300 tw-rounded focus:tw-ring-brand-blue tw-cursor-pointer"
                             />
                             <label for="terms" class="tw-ml-2 tw-text-sm tw-text-gray-600 tw-cursor-pointer">
-                                I agree to the <a href="terms.html" target="_blank" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Terms of Service</a> and <a href="privacy.html" target="_blank" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Privacy Policy</a>
+                                I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Terms of Service</a> and <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Privacy Policy</a>
                             </label>
+                        </div>
+
+                        <!-- Honeypot field - hidden from users, bots will fill it -->
+                        <div class="tw-hidden" aria-hidden="true">
+                            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
                         </div>
 
                         <button type="submit" id="signup-btn" class="btn tw-w-full tw-justify-center tw-text-lg tw-py-4">

@@ -107,8 +107,26 @@ function socialLogin(provider) {
 // Login Form Handler
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
+    let loginAttemptCount = 0;
+    const maxLoginAttempts = 5;
+    let loginLockedUntil = null;
+    
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // Check rate limiting
+        if (loginLockedUntil && Date.now() < loginLockedUntil) {
+            const remainingSeconds = Math.ceil((loginLockedUntil - Date.now()) / 1000);
+            showMessage('login-message', `Too many attempts. Please wait ${remainingSeconds} seconds before trying again.`, 'error');
+            return;
+        }
+        
+        // Honeypot check - if filled, it's a bot
+        const honeypot = document.getElementById('company_website');
+        if (honeypot && honeypot.value) {
+            console.log('Bot detected via honeypot');
+            return;
+        }
         
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -133,8 +151,16 @@ if (loginForm) {
         }
         
         if (!isValid) {
+            loginAttemptCount++;
+            if (loginAttemptCount >= maxLoginAttempts) {
+                loginLockedUntil = Date.now() + 30000; // Lock for 30 seconds
+                showMessage('login-message', 'Too many failed attempts. Please wait 30 seconds.', 'error');
+            }
             return;
         }
+        
+        // Reset attempt count on valid submission
+        loginAttemptCount = 0;
         
         // Show loading state
         btn.disabled = true;
@@ -164,6 +190,9 @@ if (loginForm) {
 const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     const passwordInput = document.getElementById('signup-password');
+    let attemptCount = 0;
+    const maxAttempts = 5;
+    let lockedUntil = null;
     
     // Password strength checker
     if (passwordInput) {
@@ -174,6 +203,21 @@ if (signupForm) {
     
     signupForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // Check rate limiting
+        if (lockedUntil && Date.now() < lockedUntil) {
+            const remainingSeconds = Math.ceil((lockedUntil - Date.now()) / 1000);
+            showMessage('signup-message', `Too many attempts. Please wait ${remainingSeconds} seconds before trying again.`, 'error');
+            return;
+        }
+        
+        // Honeypot check - if filled, it's a bot
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value) {
+            console.log('Bot detected via honeypot');
+            // Silently fail for bots
+            return;
+        }
         
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
@@ -225,8 +269,16 @@ if (signupForm) {
         }
         
         if (!isValid) {
+            attemptCount++;
+            if (attemptCount >= maxAttempts) {
+                lockedUntil = Date.now() + 30000; // Lock for 30 seconds
+                showMessage('signup-message', 'Too many failed attempts. Please wait 30 seconds.', 'error');
+            }
             return;
         }
+        
+        // Reset attempt count on valid submission
+        attemptCount = 0;
         
         // Show loading state
         btn.disabled = true;
@@ -240,14 +292,8 @@ if (signupForm) {
             btnText.classList.remove('tw-hidden');
             btnSpinner.classList.add('tw-hidden');
             
-            // Show success
-            showMessage('signup-message', 'Account created successfully! Check your email to verify your account.', 'success');
-            
-            // Simulate redirect
-            setTimeout(() => {
-                console.log('Would redirect to onboarding or dashboard');
-                // window.location.href = 'onboarding.html';
-            }, 2000);
+            // Redirect to thank-you page
+            window.location.href = 'thank-you.html';
         }, 2000);
     });
 }

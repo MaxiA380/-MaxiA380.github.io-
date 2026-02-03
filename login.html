@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'" />
         <title>Login - Freytor</title>
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -90,6 +91,11 @@
                             <a href="#" class="tw-text-sm tw-text-brand-blue hover:tw-underline tw-font-medium">
                                 Forgot password?
                             </a>
+                        </div>
+
+                        <!-- Honeypot field - hidden from users, bots will fill it -->
+                        <div class="tw-hidden" aria-hidden="true">
+                            <input type="text" name="company_website" id="company_website" tabindex="-1" autocomplete="off" />
                         </div>
 
                         <button type="submit" id="login-btn" class="btn tw-w-full tw-justify-center tw-text-lg tw-py-4">

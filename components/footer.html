@@ -1,37 +1,138 @@
 <footer
-    class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-p-12 tw-px-[10%] tw-text-black max-md:tw-flex-col max-md:tw-p-8"
+    class="tw-mt-auto tw-w-full tw-bg-gradient-to-br tw-from-blue-100 tw-to-green-100 tw-text-black"
 >
-    <div
-        class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
-    >
-        <img
-            src="./assets/logo/logo1.png"
-            alt="Freytor logo"
-            class="tw-max-w-[120px]"
-        />
-        <div class="tw-text-center tw-text-gray-700">
-            P.H. Colonial, Vía Israel
-            <br />
-            San Francisco
-            <br />
-            Panama City, Panama
+    <!-- Main Footer Content -->
+    <div class="tw-flex tw-w-full tw-place-content-around tw-gap-8 tw-p-12 tw-px-[10%] max-md:tw-flex-col max-md:tw-p-8">
+        <div
+            class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+        >
+            <img
+                src="./assets/logo/logo1.png"
+                alt="Freytor logo"
+                class="tw-max-w-[120px]"
+            />
+            <div class="tw-text-center tw-text-gray-700">
+                P.H. Colonial, Vía Israel
+                <br />
+                San Francisco
+                <br />
+                Panama City, Panama
+            </div>
+            <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
+            <div class="tw-flex tw-gap-4 tw-text-2xl">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-brand-blue">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="tw-text-gray-700 tw-transition-colors hover:tw-text-brand-blue">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="tw-text-gray-700 tw-transition-colors hover:tw-text-brand-blue">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="tw-text-gray-700 tw-transition-colors hover:tw-text-brand-blue">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
         </div>
-        <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us!</div>
-        <div class="tw-flex tw-gap-4 tw-text-2xl">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tw-text-gray-700 tw-transition-colors hover:tw-text-brand-blue">
-                <i class="bi bi-linkedin"></i>
-            </a>
+
+        <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-6 max-md:tw-w-full">
+            <h2 class="tw-text-3xl tw-text-brand-blue tw-font-bold max-md:tw-text-xl">Resources</h2>
+            <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                <a href="about.html" class="footer-link">About us</a>
+                <a href="faq.html" class="footer-link">FAQ</a>
+                <a href="contact.html" class="footer-link">Contact Us</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="tw-flex tw-h-full tw-w-[300px] tw-flex-col tw-gap-6 max-md:tw-w-full">
+            <h2 class="tw-text-3xl tw-text-brand-blue tw-font-bold max-md:tw-text-xl">Newsletter</h2>
+            <p class="tw-text-gray-700 tw-text-sm">Get logistics tips, product updates, and industry insights delivered to your inbox.</p>
+            <form id="newsletter-form" class="tw-flex tw-flex-col tw-gap-3">
+                <div class="tw-flex tw-gap-2">
+                    <input 
+                        type="email" 
+                        id="newsletter-email"
+                        placeholder="Enter your email" 
+                        required
+                        class="tw-flex-1 tw-px-4 tw-py-2 tw-rounded-lg tw-border tw-border-gray-300 tw-text-sm focus:tw-outline-none focus:tw-border-brand-blue"
+                    />
+                    <button type="submit" class="tw-bg-brand-blue tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-text-sm hover:tw-bg-brand-blue-dark tw-transition-colors">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+                <p class="tw-text-xs tw-text-gray-500">No spam, unsubscribe anytime.</p>
+            </form>
+
+            <!-- Trust Badges -->
+            <div class="tw-mt-4">
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-3">Trusted & Secure</p>
+                <div class="tw-flex tw-flex-wrap tw-gap-3">
+                    <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
+                        <i class="bi bi-shield-lock-fill tw-text-brand-green"></i>
+                        <span>SSL Secured</span>
+                    </div>
+                    <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
+                        <i class="bi bi-patch-check-fill tw-text-brand-blue"></i>
+                        <span>GDPR Ready</span>
+                    </div>
+                    <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
+                        <i class="bi bi-award-fill tw-text-amber-500"></i>
+                        <span>SOC 2</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-6 max-md:tw-w-full">
-        <h2 class="tw-text-3xl tw-text-brand-blue tw-font-bold max-md:tw-text-xl">Resources</h2>
-        <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-            <a href="about.html" class="footer-link">About us</a>
-            <a href="faq.html" class="footer-link">FAQ</a>
-            <a href="contact.html" class="footer-link">Contact Us</a>
-            <a href="privacy.html" class="footer-link">Privacy Policy</a>
-            <a href="terms.html" class="footer-link">Terms of Service</a>
+    <!-- Bottom Bar -->
+    <div class="tw-border-t tw-border-gray-300/50 tw-py-4 tw-px-[10%]">
+        <div class="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-gap-4 max-md:tw-justify-center max-md:tw-text-center">
+            <p class="tw-text-sm tw-text-gray-600">
+                © 2026 Freytor. All rights reserved.
+            </p>
+            <div class="tw-flex tw-items-center tw-gap-4 tw-text-sm tw-text-gray-600">
+                <a href="privacy.html" class="hover:tw-text-brand-blue tw-transition-colors">Privacy</a>
+                <span>•</span>
+                <a href="terms.html" class="hover:tw-text-brand-blue tw-transition-colors">Terms</a>
+                <span>•</span>
+                <a href="contact.html" class="hover:tw-text-brand-blue tw-transition-colors">Contact</a>
+            </div>
         </div>
     </div>
 </footer>
+
+<script>
+    // Newsletter form handler
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            const btn = newsletterForm.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            // Show loading
+            btn.disabled = true;
+            btn.innerHTML = '<i class="bi bi-arrow-repeat tw-animate-spin"></i>';
+            
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerHTML = '<i class="bi bi-check-lg"></i>';
+                btn.classList.remove('tw-bg-brand-blue');
+                btn.classList.add('tw-bg-brand-green');
+                document.getElementById('newsletter-email').value = '';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('tw-bg-brand-green');
+                    btn.classList.add('tw-bg-brand-blue');
+                }, 2000);
+            }, 1000);
+        });
+    }
+</script>

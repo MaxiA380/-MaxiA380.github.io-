@@ -15,37 +15,45 @@ function onHeaderClickOutside(e) {
 
 function toggleHeader() {
     if (isHeaderCollapsed) {
-        // Open menu with smooth animation
+        // Open menu with smooth CSS transform animation (better performance)
         collapseHeaderItems.classList.add("opacity-100")
-        collapseHeaderItems.style.width = "60vw"
-        collapseHeaderItems.style.transition = "width 0.3s ease-in-out, opacity 0.3s ease-in-out"
+        collapseHeaderItems.style.transform = "translateX(0)"
+        collapseHeaderItems.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out"
         collapseBtn.classList.remove("bi-list")
         collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
         isHeaderCollapsed = false
+
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = "hidden"
 
         setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 10)
     } else {
         // Close menu with smooth animation
         collapseHeaderItems.classList.remove("opacity-100")
-        collapseHeaderItems.style.width = "0vw"
+        collapseHeaderItems.style.transform = "translateX(100%)"
         collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
         collapseBtn.classList.add("bi-list")
         isHeaderCollapsed = true
+        
+        // Restore body scroll
+        document.body.style.overflow = ""
+        
         window.removeEventListener("click", onHeaderClickOutside)
     }
 }
 
 function responsive() {
     if (window.innerWidth > RESPONSIVE_WIDTH) {
-        collapseHeaderItems.style.width = ""
+        collapseHeaderItems.style.transform = ""
         collapseHeaderItems.style.transition = ""
         collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
         collapseBtn.classList.add("bi-list")
         isHeaderCollapsed = false
+        document.body.style.overflow = ""
         window.removeEventListener("click", onHeaderClickOutside)
     } else {
         if (!isHeaderCollapsed) {
-            collapseHeaderItems.style.width = "0vw"
+            collapseHeaderItems.style.transform = "translateX(100%)"
             collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
             collapseBtn.classList.add("bi-list")
             isHeaderCollapsed = true

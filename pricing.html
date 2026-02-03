@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'" />
         <title>Pricing - Freytor</title>
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -15,6 +16,15 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <style>
+            @keyframes pulse-glow {
+                0%, 100% { box-shadow: 0 0 5px rgba(62, 163, 68, 0.5), 0 0 10px rgba(26, 91, 171, 0.3); }
+                50% { box-shadow: 0 0 15px rgba(62, 163, 68, 0.8), 0 0 25px rgba(26, 91, 171, 0.5); }
+            }
+            .popular-badge { animation: pulse-glow 2s ease-in-out infinite; }
+            .price-value { transition: all 0.3s ease-in-out; }
+            .billing-text { transition: opacity 0.3s ease-in-out; }
+        </style>
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
         <!-- Header Component -->
@@ -61,10 +71,10 @@
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Starter</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
                                 <span class="tw-text-2xl tw-font-bold tw-text-brand-blue tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none">19</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none price-value" data-annual="19" data-monthly="21">19</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
-                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $228</p>
+                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1 billing-text" data-annual="billed annually at $228" data-monthly="billed monthly">billed annually at $228</p>
                         </div>
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
@@ -113,8 +123,8 @@
 
                     <!-- GROWTH PLAN -->
                     <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-6 lg:tw-p-8 tw-border-2 tw-border-brand-green tw-transition-all tw-duration-300 hover:tw-shadow-2xl hover:tw--translate-y-2 tw-relative tw-scale-100 lg:tw-scale-105">
-                        <div class="tw-absolute tw--top-4 tw-left-1/2 tw--translate-x-1/2 tw-bg-gradient-to-r tw-from-brand-blue tw-to-brand-green tw-text-white tw-px-8 tw-py-2 tw-rounded-full tw-text-xs tw-font-bold tw-shadow-lg tw-uppercase">
-                            Most Popular
+                        <div class="tw-absolute tw--top-4 tw-left-1/2 tw--translate-x-1/2 tw-bg-gradient-to-r tw-from-brand-blue tw-to-brand-green tw-text-white tw-px-8 tw-py-2 tw-rounded-full tw-text-xs tw-font-bold tw-shadow-lg tw-uppercase popular-badge">
+                            <i class="bi bi-star-fill tw-mr-1"></i> Most Popular
                         </div>
                         <div class="tw-text-center tw-mb-6 tw-mt-2">
                             <div class="tw-flex tw-justify-center tw-mb-4">
@@ -125,10 +135,10 @@
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Growth</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
                                 <span class="tw-text-2xl tw-font-bold tw-text-brand-green tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-green tw-leading-none">39</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-green tw-leading-none price-value" data-annual="39" data-monthly="43">39</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
-                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $468</p>
+                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1 billing-text" data-annual="billed annually at $468" data-monthly="billed monthly">billed annually at $468</p>
                         </div>
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
@@ -190,10 +200,10 @@
                             <h3 class="tw-text-sm lg:tw-text-base tw-font-bold tw-text-gray-700 tw-uppercase tw-tracking-wider tw-mb-4">Enterprise</h3>
                             <div class="tw-flex tw-items-start tw-justify-center tw-mb-2">
                                 <span class="tw-text-2xl tw-font-bold tw-text-brand-blue tw-mt-2">$</span>
-                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none">79</span>
+                                <span class="tw-text-6xl lg:tw-text-7xl tw-font-bold tw-text-brand-blue tw-leading-none price-value" data-annual="79" data-monthly="89">79</span>
                             </div>
                             <p class="tw-text-base tw-text-gray-600 tw-font-medium">per month</p>
-                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1">billed annually at $948</p>
+                            <p class="tw-text-sm tw-text-gray-500 tw-mt-1 billing-text" data-annual="billed annually at $948" data-monthly="billed monthly">billed annually at $948</p>
                         </div>
 
                         <ul class="tw-space-y-3 tw-mb-8 tw-text-sm tw-text-gray-700">
@@ -257,9 +267,22 @@
                     </div>
                 </div>
 
-                <p class="tw-text-center tw-text-sm tw-text-gray-500 tw-mb-12">
+                <p class="tw-text-center tw-text-sm tw-text-gray-500 tw-mb-8">
                     All prices in USD and exclusive of taxes.
                 </p>
+
+                <!-- Money-back Guarantee Badge -->
+                <div class="tw-flex tw-justify-center tw-mb-12">
+                    <div class="tw-inline-flex tw-items-center tw-gap-3 tw-bg-green-50 tw-border-2 tw-border-green-200 tw-rounded-full tw-px-6 tw-py-3">
+                        <div class="tw-flex tw-h-10 tw-w-10 tw-place-items-center tw-place-content-center tw-rounded-full tw-bg-brand-green">
+                            <i class="bi bi-shield-check tw-text-white tw-text-lg"></i>
+                        </div>
+                        <div class="tw-text-left">
+                            <p class="tw-font-semibold tw-text-gray-800">30-Day Money-Back Guarantee</p>
+                            <p class="tw-text-sm tw-text-gray-600">Not satisfied? Get a full refund, no questions asked.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -510,21 +533,50 @@
             </div>
         </section>
 
+        <!-- Sticky CTA for Mobile -->
+        <div class="sticky-cta" id="sticky-cta">
+            <a href="signup.html" class="btn">
+                Start Free Trial - 14 Days Free
+            </a>
+        </div>
+
         <!-- Footer Component -->
         <div id="footer-component"></div>
 
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>
         <script>
-            // Toggle between Annual and Monthly
+            // Toggle between Annual and Monthly with price updates
             const annualBtn = document.getElementById('annual-btn');
             const monthlyBtn = document.getElementById('monthly-btn');
+            const priceValues = document.querySelectorAll('.price-value');
+            const billingTexts = document.querySelectorAll('.billing-text');
+
+            function updatePrices(plan) {
+                priceValues.forEach(price => {
+                    price.style.transform = 'scale(0.8)';
+                    price.style.opacity = '0.5';
+                    setTimeout(() => {
+                        price.textContent = price.dataset[plan];
+                        price.style.transform = 'scale(1)';
+                        price.style.opacity = '1';
+                    }, 150);
+                });
+                billingTexts.forEach(text => {
+                    text.style.opacity = '0';
+                    setTimeout(() => {
+                        text.textContent = text.dataset[plan];
+                        text.style.opacity = '1';
+                    }, 150);
+                });
+            }
 
             annualBtn.addEventListener('click', () => {
                 annualBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
                 annualBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
                 monthlyBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
                 monthlyBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                updatePrices('annual');
             });
 
             monthlyBtn.addEventListener('click', () => {
@@ -532,7 +584,29 @@
                 monthlyBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
                 annualBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
                 annualBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                updatePrices('monthly');
             });
+
+            // Sticky CTA visibility on scroll
+            const stickyCta = document.getElementById('sticky-cta');
+            let lastScrollY = window.scrollY;
+            
+            function updateStickyCta() {
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                
+                // Show sticky CTA after scrolling 300px and hide near footer
+                if (scrollY > 300 && scrollY < docHeight - windowHeight - 200) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+                
+                lastScrollY = scrollY;
+            }
+            
+            window.addEventListener('scroll', updateStickyCta, { passive: true });
         </script>
     </body>
 </html>
