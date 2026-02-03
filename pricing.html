@@ -546,67 +546,74 @@
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>
         <script>
-            // Toggle between Annual and Monthly with price updates
-            const annualBtn = document.getElementById('annual-btn');
-            const monthlyBtn = document.getElementById('monthly-btn');
-            const priceValues = document.querySelectorAll('.price-value');
-            const billingTexts = document.querySelectorAll('.billing-text');
+            document.addEventListener('DOMContentLoaded', () => {
+                // Toggle between Annual and Monthly with price updates
+                const annualBtn = document.getElementById('annual-btn');
+                const monthlyBtn = document.getElementById('monthly-btn');
+                const priceValues = document.querySelectorAll('.price-value');
+                const billingTexts = document.querySelectorAll('.billing-text');
 
-            function updatePrices(plan) {
-                priceValues.forEach(price => {
-                    price.style.transform = 'scale(0.8)';
-                    price.style.opacity = '0.5';
-                    setTimeout(() => {
-                        price.textContent = price.dataset[plan];
-                        price.style.transform = 'scale(1)';
-                        price.style.opacity = '1';
-                    }, 150);
+                if (!annualBtn || !monthlyBtn) {
+                    console.error('Toggle buttons not found');
+                    return;
+                }
+
+                function updatePrices(plan) {
+                    priceValues.forEach(price => {
+                        price.style.transform = 'scale(0.8)';
+                        price.style.opacity = '0.5';
+                        setTimeout(() => {
+                            price.textContent = price.dataset[plan];
+                            price.style.transform = 'scale(1)';
+                            price.style.opacity = '1';
+                        }, 150);
+                    });
+                    billingTexts.forEach(text => {
+                        text.style.opacity = '0';
+                        setTimeout(() => {
+                            text.textContent = text.dataset[plan];
+                            text.style.opacity = '1';
+                        }, 150);
+                    });
+                }
+
+                annualBtn.addEventListener('click', () => {
+                    annualBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
+                    annualBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                    monthlyBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
+                    monthlyBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                    updatePrices('annual');
                 });
-                billingTexts.forEach(text => {
-                    text.style.opacity = '0';
-                    setTimeout(() => {
-                        text.textContent = text.dataset[plan];
-                        text.style.opacity = '1';
-                    }, 150);
+
+                monthlyBtn.addEventListener('click', () => {
+                    monthlyBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
+                    monthlyBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                    annualBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
+                    annualBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
+                    updatePrices('monthly');
                 });
-            }
 
-            annualBtn.addEventListener('click', () => {
-                annualBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
-                annualBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                monthlyBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
-                monthlyBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                updatePrices('annual');
-            });
-
-            monthlyBtn.addEventListener('click', () => {
-                monthlyBtn.classList.add('tw-bg-brand-blue', 'tw-text-white');
-                monthlyBtn.classList.remove('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                annualBtn.classList.remove('tw-bg-brand-blue', 'tw-text-white');
-                annualBtn.classList.add('tw-text-gray-600', 'hover:tw-bg-gray-100');
-                updatePrices('monthly');
-            });
-
-            // Sticky CTA visibility on scroll
-            const stickyCta = document.getElementById('sticky-cta');
-            let lastScrollY = window.scrollY;
-            
-            function updateStickyCta() {
-                const scrollY = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const docHeight = document.documentElement.scrollHeight;
+                // Sticky CTA visibility on scroll
+                const stickyCta = document.getElementById('sticky-cta');
+                let lastScrollY = window.scrollY;
                 
-                // Show sticky CTA after scrolling 300px and hide near footer
-                if (scrollY > 300 && scrollY < docHeight - windowHeight - 200) {
-                    stickyCta.classList.add('visible');
-                } else {
-                    stickyCta.classList.remove('visible');
+                function updateStickyCta() {
+                    const scrollY = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    const docHeight = document.documentElement.scrollHeight;
+                    
+                    // Show sticky CTA after scrolling 300px and hide near footer
+                    if (scrollY > 300 && scrollY < docHeight - windowHeight - 200) {
+                        stickyCta.classList.add('visible');
+                    } else {
+                        stickyCta.classList.remove('visible');
+                    }
+                    
+                    lastScrollY = scrollY;
                 }
                 
-                lastScrollY = scrollY;
-            }
-            
-            window.addEventListener('scroll', updateStickyCta, { passive: true });
+                window.addEventListener('scroll', updateStickyCta, { passive: true });
+            });
         </script>
     </body>
 </html>

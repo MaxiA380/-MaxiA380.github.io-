@@ -3,25 +3,25 @@
 const RESPONSIVE_WIDTH = 1024
 
 let headerWhiteBg = false
-let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
-const collapseBtn = document.getElementById("collapse-btn")
-const collapseHeaderItems = document.getElementById("collapsed-header-items")
+window.isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
+window.collapseBtn = document.getElementById("collapse-btn")
+window.collapseHeaderItems = document.getElementById("collapsed-header-items")
 
 function onHeaderClickOutside(e) {
-    if (!collapseHeaderItems.contains(e.target) && !collapseBtn.contains(e.target)) {
+    if (!window.collapseHeaderItems.contains(e.target) && !window.collapseBtn.contains(e.target)) {
         toggleHeader()
     }
 }
 
-function toggleHeader() {
-    if (isHeaderCollapsed) {
+window.toggleHeader = function() {
+    if (window.isHeaderCollapsed) {
         // Open menu with smooth CSS transform animation (better performance)
-        collapseHeaderItems.classList.add("opacity-100")
-        collapseHeaderItems.style.transform = "translateX(0)"
-        collapseHeaderItems.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out"
-        collapseBtn.classList.remove("bi-list")
-        collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
-        isHeaderCollapsed = false
+        window.collapseHeaderItems.classList.add("opacity-100")
+        window.collapseHeaderItems.style.transform = "translateX(0)"
+        window.collapseHeaderItems.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out"
+        window.collapseBtn.classList.remove("bi-list")
+        window.collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
+        window.isHeaderCollapsed = false
 
         // Prevent body scroll when menu is open
         document.body.style.overflow = "hidden"
@@ -29,11 +29,11 @@ function toggleHeader() {
         setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 10)
     } else {
         // Close menu with smooth animation
-        collapseHeaderItems.classList.remove("opacity-100")
-        collapseHeaderItems.style.transform = "translateX(100%)"
-        collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
-        collapseBtn.classList.add("bi-list")
-        isHeaderCollapsed = true
+        window.collapseHeaderItems.classList.remove("opacity-100")
+        window.collapseHeaderItems.style.transform = "translateX(100%)"
+        window.collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
+        window.collapseBtn.classList.add("bi-list")
+        window.isHeaderCollapsed = true
         
         // Restore body scroll
         document.body.style.overflow = ""
@@ -44,19 +44,19 @@ function toggleHeader() {
 
 function responsive() {
     if (window.innerWidth > RESPONSIVE_WIDTH) {
-        collapseHeaderItems.style.transform = ""
-        collapseHeaderItems.style.transition = ""
-        collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
-        collapseBtn.classList.add("bi-list")
-        isHeaderCollapsed = false
+        window.collapseHeaderItems.style.transform = ""
+        window.collapseHeaderItems.style.transition = ""
+        window.collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
+        window.collapseBtn.classList.add("bi-list")
+        window.isHeaderCollapsed = false
         document.body.style.overflow = ""
         window.removeEventListener("click", onHeaderClickOutside)
     } else {
-        if (!isHeaderCollapsed) {
-            collapseHeaderItems.style.transform = "translateX(100%)"
-            collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
-            collapseBtn.classList.add("bi-list")
-            isHeaderCollapsed = true
+        if (!window.isHeaderCollapsed) {
+            window.collapseHeaderItems.style.transform = "translateX(100%)"
+            window.collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed")
+            window.collapseBtn.classList.add("bi-list")
+            window.isHeaderCollapsed = true
         }
     }
 }
