@@ -57,163 +57,163 @@
                 </div>
 
                 <!-- FAQ Accordion -->
-                <div class="tw-space-y-4">
+                <div class="tw-space-y-4" role="region" aria-label="Frequently Asked Questions">
                     <!-- General Questions -->
                     <div class="faq-item" data-category="general">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">What is Freytor and who is it for?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
                             <p>Freytor is a comprehensive logistics management platform designed specifically for small and medium-sized enterprises (SMEs) in emerging markets. We help businesses streamline their shipping operations, track shipments in real-time, optimize delivery routes, and manage inventory—all from a single, easy-to-use dashboard. Whether you're shipping 10 packages a month or 10,000, Freytor provides enterprise-level logistics capabilities at an affordable price.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="general">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">How quickly can I get started with Freytor?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
                             <p>You can be up and running in minutes! Simply sign up for a free 14-day trial, connect your preferred carriers, and start shipping. Our intuitive onboarding process guides you through the setup, and our support team is available to help if needed. No lengthy training sessions or complex configurations required.</p>
                         </div>
                     </div>
 
                     <!-- Pricing Questions -->
                     <div class="faq-item" data-category="pricing">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">How does the free trial work?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
                             <p>Our 14-day free trial gives you full access to all features of your chosen plan. No credit card is required to start. You can process shipments, track packages, and explore all features risk-free. After 14 days, you can choose to subscribe to continue using Freytor, or simply let the trial expire with no obligations.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="pricing">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">What happens if I exceed my shipment limit?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
                             <p>We'll notify you when you're approaching your monthly shipment limit. If you exceed it, additional shipments are charged at $0.10 per shipment on the Starter plan and $0.08 per shipment on the Growth plan. Alternatively, you can upgrade to a higher plan at any time. The Enterprise plan includes unlimited shipments.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="pricing">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Can I change plans or cancel anytime?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
                             <p>Absolutely! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades apply at the start of your next billing cycle. You can also cancel your subscription anytime with no cancellation fees. We believe in flexibility and no long-term lock-ins.</p>
                         </div>
                     </div>
 
                     <!-- Technical Questions -->
                     <div class="faq-item" data-category="technical">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Does Freytor integrate with my existing systems?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
                             <p>Yes! Freytor integrates with over 100 e-commerce platforms, marketplaces, and business tools including Shopify, WooCommerce, Amazon, eBay, and more. We also provide a robust REST API and webhooks for custom integrations. Our technical team can help you set up integrations specific to your workflow.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="technical">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-7" id="faq-question-7">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Is my data secure with Freytor?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
                             <p>Security is our top priority. We use bank-level 256-bit SSL encryption for all data transfers, store your data in SOC 2 compliant data centers, and perform daily backups. We're also GDPR compliant and follow industry best practices for data protection. Your shipment data, customer information, and business analytics are always encrypted and secure.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="technical">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-8" id="faq-question-8">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Do I need technical knowledge to use Freytor?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
                             <p>Not at all! Freytor is designed to be user-friendly and intuitive. Our dashboard is easy to navigate, and common tasks like creating shipments, tracking packages, and viewing reports require no technical expertise. However, if you want to use advanced features like API integrations or custom webhooks, our documentation and support team are here to help.</p>
                         </div>
                     </div>
 
                     <!-- Shipping & Logistics Questions -->
                     <div class="faq-item" data-category="shipping">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-9" id="faq-question-9">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Which carriers does Freytor support?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
                             <p>We support over 100 carriers globally, including major international carriers like DHL, FedEx, UPS, and local/regional carriers across emerging markets. Our Enterprise plan also allows for custom carrier integrations if you work with specialized logistics providers.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="shipping">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-10" id="faq-question-10">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Can Freytor help me save on shipping costs?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-10" role="region" aria-labelledby="faq-question-10">
                             <p>Yes! Our smart route optimization helps reduce delivery times and fuel costs. Our analytics show you which carriers offer the best rates for different routes, and we help you consolidate shipments when possible. On average, our customers save 10-15% on logistics costs within the first 3 months.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="shipping">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-11" id="faq-question-11">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">Can I track shipments in real-time?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-11" role="region" aria-labelledby="faq-question-11">
                             <p>Absolutely! Real-time tracking is a core feature of Freytor. You can monitor all your shipments from a single dashboard, receive automatic status updates, and provide tracking links to your customers. We aggregate tracking data from all your carriers into one unified view.</p>
                         </div>
                     </div>
 
                     <div class="faq-item" data-category="general">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-12" id="faq-question-12">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
-                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1"></i>
+                                <i class="bi bi-question-circle tw-text-brand-blue tw-text-xl tw-mt-1" aria-hidden="true"></i>
                                 <span class="tw-text-left">What kind of support do you offer?</span>
                             </div>
-                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300"></i>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-12" role="region" aria-labelledby="faq-question-12">
                             <p>We offer email support for all plans, with typical response times under 2 hours during business hours. Growth and Enterprise customers get priority support, including phone and live chat options. Enterprise customers also receive a dedicated account manager and 24/7 premium support for critical issues.</p>
                         </div>
                     </div>

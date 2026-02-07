@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'" />
         <title>Login - Freytor</title>
+        <meta name="description" content="Sign in to your Freytor account. Access your logistics dashboard, track shipments, and manage your operations." />
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="./tailwind.config.js"></script>
@@ -18,10 +19,12 @@
         />
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        
         <!-- Header Component -->
         <div id="header-component"></div>
 
-        <section class="tw-flex tw-min-h-[100vh] tw-w-full tw-items-center tw-justify-center tw-p-4">
+        <main id="main-content" class="tw-flex tw-min-h-[100vh] tw-w-full tw-items-center tw-justify-center tw-p-4">
             <div class="tw-w-full tw-max-w-[480px]">
                 <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-8 tw-border-2 tw-border-blue-100 tw-transition-all tw-duration-300 hover:tw-shadow-2xl max-md:tw-p-6">
                     <div class="tw-text-center tw-mb-8">
@@ -88,7 +91,7 @@
                                 />
                                 <span class="tw-ml-2 tw-text-sm tw-text-gray-600">Remember me</span>
                             </label>
-                            <a href="#" class="tw-text-sm tw-text-brand-blue hover:tw-underline tw-font-medium">
+                            <a href="forgot-password.html" class="tw-text-sm tw-text-brand-blue hover:tw-underline tw-font-medium">
                                 Forgot password?
                             </a>
                         </div>
@@ -161,7 +164,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </main>
 
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>

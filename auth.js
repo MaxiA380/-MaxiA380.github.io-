@@ -307,29 +307,34 @@ if (contactForm) {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
+        // Get button elements
+        const submitBtn = document.getElementById('contact-submit-btn');
+        const btnText = document.getElementById('contact-btn-text');
+        const btnSpinner = document.getElementById('contact-btn-spinner');
+        const messageDiv = document.getElementById('contact-message');
+        
         // Show loading state
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="bi bi-arrow-repeat tw-animate-spin tw-mr-2"></i>Sending...';
+        btnText.classList.add('tw-hidden');
+        btnSpinner.classList.remove('tw-hidden');
         
         // Simulate API call
         setTimeout(() => {
             // Reset button
             submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
+            btnText.classList.remove('tw-hidden');
+            btnSpinner.classList.add('tw-hidden');
             
             // Show success message
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'tw-bg-green-100 tw-border tw-border-green-300 tw-text-green-700 tw-p-4 tw-rounded-lg tw-mb-6';
+            messageDiv.classList.remove('tw-hidden', 'tw-bg-red-100', 'tw-text-red-700', 'tw-border-red-300');
+            messageDiv.classList.add('tw-bg-green-100', 'tw-border', 'tw-border-green-300', 'tw-text-green-700');
             messageDiv.innerHTML = '<i class="bi bi-check-circle tw-mr-2"></i>Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
             
-            contactForm.parentElement.insertBefore(messageDiv, contactForm);
             contactForm.reset();
             
             // Remove message after 5 seconds
             setTimeout(() => {
-                messageDiv.remove();
+                messageDiv.classList.add('tw-hidden');
             }, 5000);
         }, 2000);
     });

@@ -40,10 +40,13 @@
         </style>
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        
         <!-- Header Component -->
         <div id="header-component"></div>
 
         <!-- ==================== HERO SECTION ==================== -->
+        <main id="main-content">
         <section class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-flex-col tw-overflow-hidden tw-bg-gradient-to-br tw-from-white tw-via-blue-50/50 tw-to-green-50/50">
             <!-- Background decorations -->
             <div class="tw-absolute tw-top-20 tw-left-10 tw-w-72 tw-h-72 tw-bg-brand-blue/10 tw-rounded-full tw-blur-3xl animate-pulse-slow"></div>
@@ -108,6 +111,8 @@
                                 src="./assets/images/home/dashboard.png"
                                 alt="Freytor Dashboard Preview"
                                 class="tw-w-full tw-max-w-[600px] tw-h-auto"
+                                loading="eager"
+                                fetchpriority="high"
                             />
                         </div>
                         
@@ -893,6 +898,7 @@
                 </p>
             </div>
         </section>
+        </main>
 
         <!-- Footer Component -->
         <div id="footer-component"></div>

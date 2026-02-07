@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'" />
         <title>Sign Up - Freytor</title>
+        <meta name="description" content="Start your 14-day free trial with Freytor. No credit card required. Sign up and simplify your logistics operations today." />
         <link rel="shortcut icon" href="./assets/logo/logo1.png" type="image/x-icon" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="./tailwind.config.js"></script>
@@ -18,10 +19,12 @@
         />
     </head>
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-gradient-to-br tw-from-white tw-via-blue-50/30 tw-to-green-50/30">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        
         <!-- Header Component -->
         <div id="header-component"></div>
 
-        <section class="tw-flex tw-min-h-[100vh] tw-w-full tw-items-center tw-justify-center tw-p-4 tw-py-24">
+        <main id="main-content" class="tw-flex tw-min-h-[100vh] tw-w-full tw-items-center tw-justify-center tw-p-4 tw-py-24">
             <div class="tw-w-full tw-max-w-[600px]">
                 <div class="tw-bg-white tw-rounded-2xl tw-shadow-xl tw-p-8 tw-border-2 tw-border-green-100 tw-transition-all tw-duration-300 hover:tw-shadow-2xl max-md:tw-p-6">
                     <div class="tw-text-center tw-mb-8">
@@ -252,7 +255,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </main>
 
         <script src="./index.js"></script>
         <script src="./auth.js"></script>
