@@ -17,6 +17,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <!-- Paddle.js -->
+        <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
         <style>
             @keyframes pulse-glow {
                 0%, 100% { box-shadow: 0 0 5px rgba(62, 163, 68, 0.5), 0 0 10px rgba(26, 91, 171, 0.3); }
@@ -119,9 +121,9 @@
                             </li>
                         </ul>
 
-                        <a href="signup.html" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold">
+                        <button onclick="openPaddleCheckout('growth', true)" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold popular-badge">
                             Start Free Trial
-                        </a>
+                        </button>
                     </div>
 
                     <!-- GROWTH PLAN -->
@@ -187,9 +189,9 @@
                             </li>
                         </ul>
 
-                        <a href="signup.html" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold">
+                        <button onclick="openPaddleCheckout('starter')" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold">
                             Start Free Trial
-                        </a>
+                        </button>
                     </div>
 
                     <!-- PRO PLAN -->
@@ -264,9 +266,9 @@
                             </li>
                         </ul>
 
-                        <a href="signup.html" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold">
+                        <button onclick="openPaddleCheckout('enterprise')" class="btn tw-w-full tw-justify-center tw-py-3 tw-text-base tw-font-semibold">
                             Start Free Trial
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -551,6 +553,7 @@
         <script src="./i18n.js"></script>
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>
+        <script src="./paddle-checkout.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 // Toggle between Annual and Monthly with price updates
