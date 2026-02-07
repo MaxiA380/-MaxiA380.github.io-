@@ -4,33 +4,31 @@
  */
 
 // Initialize Paddle
-// IMPORTANT: Replace 'PADDLE_VENDOR_ID' with your actual Paddle Vendor ID from the Paddle dashboard
-const PADDLE_VENDOR_ID = 'YOUR_PADDLE_VENDOR_ID'; // Get this from https://vendors.paddle.com/account
+const PADDLE_VENDOR_ID = '283532'; // Freytor Seller ID
 
-// Paddle Product/Plan IDs - Replace these with your actual product IDs from Paddle
+// Paddle Product/Plan IDs
 const PADDLE_PRODUCTS = {
     starter: {
-        monthly: 'YOUR_STARTER_MONTHLY_PRICE_ID',
-        annual: 'YOUR_STARTER_ANNUAL_PRICE_ID'
+        monthly: 'pro_01kgxxg758rese1997628sf7rf',  // Basic Monthly
+        annual: 'pro_01kgxxgyqbfpjwgtr4630w3675'   // Basic Annual
     },
     growth: {
-        monthly: 'YOUR_GROWTH_MONTHLY_PRICE_ID',
-        annual: 'YOUR_GROWTH_ANNUAL_PRICE_ID'
+        monthly: 'pro_01kgxxhmjhrzhxc9ja2pk5zy7j',  // Growth Monthly
+        annual: 'pro_01kgxxs8jm5yh8w66ghp6wxv6a'   // Growth Annual
     },
     enterprise: {
-        monthly: 'YOUR_ENTERPRISE_MONTHLY_PRICE_ID',
-        annual: 'YOUR_ENTERPRISE_ANNUAL_PRICE_ID'
+        monthly: 'pro_01kgxxtrgzegb35wz2n1tkey9p',  // Enterprise Monthly
+        annual: 'pro_01kgxxtzc84z64spxyh8dfvefj'   // Enterprise Annual
     }
 };
 
 // Initialize Paddle on page load
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof Paddle !== 'undefined') {
-        // Use sandbox environment for testing
-        // Change to 'production' when you're ready to go live
-        Paddle.Environment.set('sandbox');
+        // Production environment - live payments
+        Paddle.Environment.set('production');
         
-        // Initialize with your Vendor ID
+        // Initialize with Vendor ID
         Paddle.Setup({ 
             vendor: parseInt(PADDLE_VENDOR_ID)
         });
