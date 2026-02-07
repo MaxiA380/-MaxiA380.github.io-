@@ -15,17 +15,62 @@
         <div
             class="tw-flex tw-h-full tw-w-max tw-gap-6 tw-text-base tw-text-black max-lg:tw-mt-8 max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-6 lg:tw-mx-auto lg:tw-place-items-center"
         >
-            <a class="header-links" href="about.html">About us</a>
-            <a class="header-links" href="pricing.html">Pricing</a>
-            <a class="header-links" href="contact.html">Contact us</a>
+            <a class="header-links" href="about.html" data-i18n="nav.about">About us</a>
+            <a class="header-links" href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+            <a class="header-links" href="contact.html" data-i18n="nav.contact">Contact us</a>
         </div>
         <div
             class="tw-flex tw-place-items-center tw-gap-6 tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
         >
+            <!-- Language Switcher -->
+            <div class="tw-relative language-switcher">
+                <button
+                    id="language-button"
+                    class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1 tw-rounded-md tw-border tw-border-gray-300 tw-transition-all tw-duration-300 hover:tw-border-brand-blue hover:tw-bg-gray-50"
+                    aria-label="Select language"
+                    onclick="toggleLanguageMenu()"
+                >
+                    <i class="bi bi-globe tw-text-lg"></i>
+                    <span id="current-language" class="tw-text-sm tw-font-medium">🇬🇧 English</span>
+                    <i class="bi bi-chevron-down tw-text-xs"></i>
+                </button>
+                <div
+                    id="language-menu"
+                    class="tw-absolute tw-right-0 tw-mt-2 tw-w-48 tw-bg-white tw-rounded-lg tw-shadow-lg tw-border tw-border-gray-200 tw-overflow-hidden tw-hidden"
+                    style="z-index: 100;"
+                >
+                    <button
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
+                        data-lang="en"
+                        onclick="changeLanguage('en')"
+                    >
+                        <span class="tw-text-2xl">🇬🇧</span>
+                        <span class="tw-font-medium">English</span>
+                    </button>
+                    <button
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
+                        data-lang="de"
+                        onclick="changeLanguage('de')"
+                    >
+                        <span class="tw-text-2xl">🇩🇪</span>
+                        <span class="tw-font-medium">Deutsch</span>
+                    </button>
+                    <button
+                        class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
+                        data-lang="es"
+                        onclick="changeLanguage('es')"
+                    >
+                        <span class="tw-text-2xl">🇪🇸</span>
+                        <span class="tw-font-medium">Español</span>
+                    </button>
+                </div>
+            </div>
+            
             <a
                 href="login.html"
                 aria-label="login"
                 class="tw-transition-colors tw-duration-[0.3s] hover:tw-text-brand-blue"
+                data-i18n="nav.login"
             >
                 Login
             </a>
@@ -33,6 +78,7 @@
                 href="signup.html"
                 aria-label="signup"
                 class="tw-rounded-md tw-border-2 tw-border-brand-blue tw-p-1 tw-px-3 tw-font-medium tw-text-brand-blue tw-transition-all tw-duration-[0.3s] hover:tw-bg-brand-blue hover:tw-text-white"
+                data-i18n="nav.signup"
             >
                 Signup
             </a>

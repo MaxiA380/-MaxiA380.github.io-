@@ -30,6 +30,11 @@ class ComponentLoader {
         
         // Highlight active nav link
         this.highlightActiveLink();
+        
+        // Initialize i18n after components are loaded
+        if (window.i18n) {
+            window.i18n().translatePage();
+        }
     }
 
     static initHeaderToggle() {
@@ -56,3 +61,44 @@ class ComponentLoader {
 document.addEventListener('DOMContentLoaded', () => {
     ComponentLoader.init();
 });
+
+/**
+ * Language Switcher Functions
+ */
+
+// Toggle language dropdown menu
+function toggleLanguageMenu() {
+    const menu = document.getElementById('language-menu');
+    if (menu) {
+        menu.classList.toggle('tw-hidden');
+    }
+}
+
+// Close language menu when clicking outside
+document.addEventListener('click', (event) => {
+    const languageButton = document.getElementById('language-button');
+    const languageMenu = document.getElementById('language-menu');
+    
+    if (languageButton && languageMenu && 
+        !languageButton.contains(event.target) && 
+        !languageMenu.contains(event.target)) {
+        languageMenu.classList.add('tw-hidden');
+    }
+});
+
+// Change language
+function changeLanguage(lang) {
+    if (window.i18n) {
+        window.i18n().setLanguage(lang);
+        
+        // Close the menu
+        const menu = document.getElementById('language-menu');
+        if (menu) {
+            menu.classList.add('tw-hidden');
+        }
+    }
+}
+
+// Make functions globally available
+window.toggleLanguageMenu = toggleLanguageMenu;
+window.changeLanguage = changeLanguage;
