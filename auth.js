@@ -298,44 +298,22 @@ if (signupForm) {
     });
 }
 
-// Contact Form Handler
+// Contact Form Handler - Now using FormSubmit
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Get button elements
+    contactForm.addEventListener('submit', (e) => {
+        // FormSubmit will handle the submission
+        // Just show loading state before form submits naturally
         const submitBtn = document.getElementById('contact-submit-btn');
         const btnText = document.getElementById('contact-btn-text');
         const btnSpinner = document.getElementById('contact-btn-spinner');
-        const messageDiv = document.getElementById('contact-message');
         
         // Show loading state
         submitBtn.disabled = true;
         btnText.classList.add('tw-hidden');
         btnSpinner.classList.remove('tw-hidden');
         
-        // Simulate API call
-        setTimeout(() => {
-            // Reset button
-            submitBtn.disabled = false;
-            btnText.classList.remove('tw-hidden');
-            btnSpinner.classList.add('tw-hidden');
-            
-            // Show success message
-            messageDiv.classList.remove('tw-hidden', 'tw-bg-red-100', 'tw-text-red-700', 'tw-border-red-300');
-            messageDiv.classList.add('tw-bg-green-100', 'tw-border', 'tw-border-green-300', 'tw-text-green-700');
-            messageDiv.innerHTML = '<i class="bi bi-check-circle tw-mr-2"></i>Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
-            
-            contactForm.reset();
-            
-            // Remove message after 5 seconds
-            setTimeout(() => {
-                messageDiv.classList.add('tw-hidden');
-            }, 5000);
-        }, 2000);
+        // Form will submit naturally to FormSubmit
+        // User will be redirected to thank-you.html
     });
 }
