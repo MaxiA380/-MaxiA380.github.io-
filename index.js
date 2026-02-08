@@ -80,3 +80,83 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     })
 })
 
+// ==================== ANIMATED STATISTICS COUNTER ====================
+function animateCounter(element, target, duration = 2000) {
+    const suffix = element.dataset.suffix || ''
+    const startValue = 0
+    const endValue = parseFloat(target)
+    const hasDecimal = target.toString().includes('.')
+    const decimalPlaces = hasDecimal ? target.toString().split('.')[1].length : 0
+    
+    const startTime = performance.now()
+    
+    function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4)
+    }
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const easedProgress = easeOutQuart(progress)
+        
+        const currentValue = startValue + (endValue - startValue) * easedProgress
+        
+        if (hasDecimal) {
+            element.textContent = currentValue.toFixed(decimalPlaces) + suffix
+        } else {
+            element.textContent = Math.floor(currentValue) + suffix
+        }
+        
+        if (progress < 1) {
+            requestAnimationFrame(update)
+        } else {
+            element.textContent = target + suffix
+        }
+    }
+    
+    requestAnimationFrame(update)
+}
+
+// Initialize stats counter animation when section is visible
+function initStatsAnimation() {
+    const statsSections = ['stats-section', 'about-stats-section']
+    
+    statsSections.forEach(sectionId => {
+        const statsSection = document.getElementById(sectionId)
+        if (!statsSection) return
+        
+        const counters = statsSection.querySelectorAll('[data-count-to]')
+        let hasAnimated = false
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true
+                    
+                    // Stagger the animations slightly for a nice effect
+                    counters.forEach((counter, index) => {
+                        setTimeout(() => {
+                            const target = counter.dataset.countTo
+                            animateCounter(counter, target, 2000)
+                        }, index * 100) // 100ms delay between each counter
+                    })
+                    
+                    // Unobserve after animation starts
+                    observer.unobserve(entry.target)
+                }
+            })
+        }, {
+            threshold: 0.3 // Trigger when 30% of section is visible
+        })
+        
+        observer.observe(statsSection)
+    })
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStatsAnimation)
+} else {
+    initStatsAnimation()
+}
+

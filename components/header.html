@@ -28,7 +28,8 @@
                     id="language-button"
                     class="tw-flex tw-items-center tw-gap-2 tw-px-3 tw-py-1 tw-rounded-md tw-border tw-border-gray-300 tw-transition-all tw-duration-300 hover:tw-border-brand-blue hover:tw-bg-gray-50"
                     aria-label="Select language"
-                    onclick="toggleLanguageMenu()"
+                    onclick="toggleLanguageMenu(event)"
+                    type="button"
                 >
                     <i class="bi bi-globe tw-text-lg"></i>
                     <span id="current-language" class="tw-text-sm tw-font-medium">🇬🇧 English</span>
@@ -37,12 +38,13 @@
                 <div
                     id="language-menu"
                     class="tw-absolute tw-right-0 tw-mt-2 tw-w-48 tw-bg-white tw-rounded-lg tw-shadow-lg tw-border tw-border-gray-200 tw-overflow-hidden tw-hidden"
-                    style="z-index: 100;"
+                    style="z-index: 9999;"
                 >
                     <button
                         class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
                         data-lang="en"
                         onclick="changeLanguage('en')"
+                        type="button"
                     >
                         <span class="tw-text-2xl">🇬🇧</span>
                         <span class="tw-font-medium">English</span>
@@ -51,6 +53,7 @@
                         class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
                         data-lang="de"
                         onclick="changeLanguage('de')"
+                        type="button"
                     >
                         <span class="tw-text-2xl">🇩🇪</span>
                         <span class="tw-font-medium">Deutsch</span>
@@ -59,6 +62,7 @@
                         class="tw-w-full tw-px-4 tw-py-3 tw-text-left tw-flex tw-items-center tw-gap-3 tw-transition-colors hover:tw-bg-blue-50"
                         data-lang="es"
                         onclick="changeLanguage('es')"
+                        type="button"
                     >
                         <span class="tw-text-2xl">🇪🇸</span>
                         <span class="tw-font-medium">Español</span>

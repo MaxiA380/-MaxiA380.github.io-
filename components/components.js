@@ -28,6 +28,9 @@ class ComponentLoader {
         // Re-initialize header toggle functionality after components are loaded
         this.initHeaderToggle();
         
+        // Initialize language switcher after components are loaded
+        this.initLanguageSwitcher();
+        
         // Highlight active nav link
         this.highlightActiveLink();
         
@@ -42,6 +45,25 @@ class ComponentLoader {
         window.collapseBtn = document.getElementById("collapse-btn");
         window.collapseHeaderItems = document.getElementById("collapsed-header-items");
         window.isHeaderCollapsed = window.innerWidth < 1024;
+    }
+
+    static initLanguageSwitcher() {
+        // Setup language switcher after header is loaded
+        const languageButton = document.getElementById('language-button');
+        const languageMenu = document.getElementById('language-menu');
+        
+        if (!languageButton || !languageMenu) {
+            console.warn('Language switcher elements not found');
+            return;
+        }
+
+        // Close language menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!languageButton.contains(event.target) && 
+                !languageMenu.contains(event.target)) {
+                languageMenu.classList.add('tw-hidden');
+            }
+        });
     }
 
     static highlightActiveLink() {
@@ -67,35 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 
 // Toggle language dropdown menu
-function toggleLanguageMenu() {
+function toggleLanguageMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    
     const menu = document.getElementById('language-menu');
     if (menu) {
+        const isHidden = menu.classList.contains('tw-hidden');
         menu.classList.toggle('tw-hidden');
+        console.log('Language menu toggled:', isHidden ? 'opening' : 'closing');
+    } else {
+        console.error('Language menu element not found');
     }
 }
 
-// Close language menu when clicking outside
-document.addEventListener('click', (event) => {
-    const languageButton = document.getElementById('language-button');
-    const languageMenu = document.getElementById('language-menu');
-    
-    if (languageButton && languageMenu && 
-        !languageButton.contains(event.target) && 
-        !languageMenu.contains(event.target)) {
-        languageMenu.classList.add('tw-hidden');
-    }
-});
-
 // Change language
 function changeLanguage(lang) {
+    console.log('Changing language to:', lang);
+    
     if (window.i18n) {
-        window.i18n().setLanguage(lang);
+        const i18nInstance = window.i18n();
+        if (i18nInstance) {
+            i18nInstance.setLanguage(lang);
+            console.log('Language changed successfully');
+        }
         
         // Close the menu
         const menu = document.getElementById('language-menu');
         if (menu) {
             menu.classList.add('tw-hidden');
         }
+    } else {
+        console.error('i18n not available');
     }
 }
 

@@ -26,6 +26,8 @@ html {
 header{
     background-color: #fff;
     color: #000;
+    position: relative;
+    z-index: 40;
 }
 
 
@@ -35,7 +37,7 @@ header > .collapsible-header{
     width: 100%;
     background-color: inherit;
     place-content: center;
-    overflow: hidden;
+    overflow: visible;
     transition: width 0.3s ease;
 }
 
@@ -751,4 +753,29 @@ a:focus-visible, button:focus-visible {
         flex: 1;
         min-width: 120px;
     }
+}
+
+/* ==================== ANIMATED STATISTICS COUNTERS ==================== */
+[data-count-to] {
+    display: inline-block;
+    transition: transform 0.2s ease-out;
+    font-feature-settings: 'tnum';  /* Use tabular numbers for consistent width */
+    font-variant-numeric: tabular-nums;
+}
+
+/* Add a subtle pulse animation when the counter is animating */
+@keyframes counter-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Optional: Add a subtle glow effect for stats on hover */
+#stats-section [data-count-to]:hover,
+#about-stats-section [data-count-to]:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
