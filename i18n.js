@@ -253,6 +253,10 @@ function initI18n() {
     if (!i18nInstance) {
         i18nInstance = new I18n();
         i18nInstance.init();
+        // Also expose directly on window
+        if (typeof window !== 'undefined') {
+            window.i18nInstance = i18nInstance;
+        }
     }
     return i18nInstance;
 }

@@ -35,9 +35,17 @@ class ComponentLoader {
         this.highlightActiveLink();
         
         // Initialize i18n after components are loaded
-        if (window.i18n) {
-            window.i18n().translatePage();
-        }
+        // Wait a bit to ensure i18n is fully loaded
+        setTimeout(() => {
+            if (typeof window.i18n === 'function') {
+                const i18nInstance = window.i18n();
+                if (i18nInstance && typeof i18nInstance.translatePage === 'function') {
+                    i18nInstance.translatePage();
+                }
+            } else if (window.i18nInstance) {
+                window.i18nInstance.translatePage();
+            }
+        }, 100);
     }
 
     static initHeaderToggle() {
@@ -63,6 +71,18 @@ class ComponentLoader {
                 !languageMenu.contains(event.target)) {
                 languageMenu.classList.add('tw-hidden');
             }
+        });
+
+        // Add event listeners to language options as a fallback
+        const languageOptions = languageMenu.querySelectorAll('[data-lang]');
+        languageOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const lang = option.getAttribute('data-lang');
+                console.log('Language option clicked:', lang);
+                changeLanguage(lang);
+            });
         });
     }
 
@@ -108,20 +128,34 @@ function toggleLanguageMenu(event) {
 function changeLanguage(lang) {
     console.log('Changing language to:', lang);
     
-    if (window.i18n) {
-        const i18nInstance = window.i18n();
-        if (i18nInstance) {
-            i18nInstance.setLanguage(lang);
-            console.log('Language changed successfully');
+    try {
+        if (typeof window.i18n === 'function') {
+            const i18nInstance = window.i18n();
+            if (i18nInstance && typeof i18nInstance.setLanguage === 'function') {
+                i18nInstance.setLanguage(lang);
+                console.log('Language changed successfully to:', lang);
+            } else {
+                console.error('i18n instance or setLanguage method not available');
+            }
+        } else if (window.i18nInstance) {
+            // Fallback to global instance
+            window.i18nInstance.setLanguage(lang);
+            console.log('Language changed successfully to:', lang);
+        } else {
+            console.error('i18n not available');
+            // Try to reload the page with language parameter as fallback
+            localStorage.setItem('preferred-language', lang);
+            location.reload();
+            return;
         }
-        
-        // Close the menu
-        const menu = document.getElementById('language-menu');
-        if (menu) {
-            menu.classList.add('tw-hidden');
-        }
-    } else {
-        console.error('i18n not available');
+    } catch (error) {
+        console.error('Error changing language:', error);
+    }
+    
+    // Close the menu
+    const menu = document.getElementById('language-menu');
+    if (menu) {
+        menu.classList.add('tw-hidden');
     }
 }
 
