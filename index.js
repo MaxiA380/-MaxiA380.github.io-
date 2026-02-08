@@ -63,6 +63,23 @@ function responsive() {
 
 window.addEventListener("resize", responsive)
 
+// Scroll effect for header
+let lastScroll = 0
+const header = document.querySelector('header')
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset
+    
+    // Add shadow and effects when scrolled
+    if (currentScroll > 20) {
+        header?.classList.add('scrolled')
+    } else {
+        header?.classList.remove('scrolled')
+    }
+    
+    lastScroll = currentScroll
+}, { passive: true })
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
