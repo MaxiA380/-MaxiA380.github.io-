@@ -295,10 +295,13 @@
                 </div>
                 
                 <div class="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-8">
-                    <!-- Feature 1 -->
+                    <!-- Feature 1 - Shipment Tracking -->
                     <div class="card-blue">
-                        <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-box-seam tw-text-2xl tw-text-brand-blue"></i>
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-box-seam tw-text-2xl tw-text-brand-blue"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-blue-100 tw-text-brand-blue tw-px-2.5 tw-py-1 tw-rounded-full">All Plans</span>
                         </div>
                         <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Unified Shipment Tracking</h3>
                         <p class="tw-text-gray-600 tw-leading-relaxed">
@@ -306,58 +309,115 @@
                         </p>
                     </div>
                     
-                    <!-- Feature 2 -->
+                    <!-- Feature 2 - Route Optimization -->
                     <div class="card-green">
-                        <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-geo-alt tw-text-2xl tw-text-brand-green"></i>
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-geo-alt tw-text-2xl tw-text-brand-green"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-blue-100 tw-text-brand-blue tw-px-2.5 tw-py-1 tw-rounded-full">All Plans</span>
                         </div>
                         <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Smart Route Optimization</h3>
                         <p class="tw-text-gray-600 tw-leading-relaxed">
-                            AI-powered routing that reduces fuel costs by 10-15%. Automatic rerouting for traffic, weather, and delivery windows.
+                            Basic routing on Starter. CVRP with capacity & multi-stop on Growth. Full OR-Tools solver + EV routing on Enterprise.
                         </p>
                     </div>
                     
-                    <!-- Feature 3 -->
+                    <!-- Feature 3 - POD -->
                     <div class="card-blue">
-                        <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-bell tw-text-2xl tw-text-brand-blue"></i>
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-camera tw-text-2xl tw-text-brand-blue"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-green-100 tw-text-brand-green tw-px-2.5 tw-py-1 tw-rounded-full">Growth+</span>
                         </div>
-                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Inventory Alerts</h3>
+                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Proof of Delivery</h3>
                         <p class="tw-text-gray-600 tw-leading-relaxed">
-                            Never run out of stock. Smart alerts when inventory runs low, with demand forecasting to plan ahead.
+                            Drivers upload photos, signatures & notes on delivery. Auto-closes shipments and notifies customers instantly.
                         </p>
                     </div>
                     
-                    <!-- Feature 4 -->
+                    <!-- Feature 4 - Multi-Driver & Driver App -->
                     <div class="card-green">
-                        <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-graph-up tw-text-2xl tw-text-brand-green"></i>
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-phone tw-text-2xl tw-text-brand-green"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-green-100 tw-text-brand-green tw-px-2.5 tw-py-1 tw-rounded-full">Growth+</span>
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Driver App & Multi-Dispatch</h3>
+                        <p class="tw-text-gray-600 tw-leading-relaxed">
+                            Mobile/PWA for drivers with step-by-step navigation, check-in/out, and live updates. Dispatch routes to multiple drivers with service zones.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 5 - Inventory -->
+                    <div class="card-blue">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-bell tw-text-2xl tw-text-brand-blue"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-green-100 tw-text-brand-green tw-px-2.5 tw-py-1 tw-rounded-full">Growth+</span>
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Inventory & SKU Tracking</h3>
+                        <p class="tw-text-gray-600 tw-leading-relaxed">
+                            Track stock movements, set reorder points, and get low-stock alerts tied to shipment lead times.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 6 - AI Alerts -->
+                    <div class="card-green">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-robot tw-text-2xl tw-text-brand-green"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-green-100 tw-text-brand-green tw-px-2.5 tw-py-1 tw-rounded-full">Growth+</span>
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">AI Alerts & Notifications</h3>
+                        <p class="tw-text-gray-600 tw-leading-relaxed">
+                            Rules-based alerts for delays & exceptions. Automated WhatsApp, email & SMS updates to customers and stakeholders.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 7 - Analytics -->
+                    <div class="card-blue">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-graph-up tw-text-2xl tw-text-brand-blue"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-blue-100 tw-text-brand-blue tw-px-2.5 tw-py-1 tw-rounded-full">All Plans</span>
                         </div>
                         <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Performance Analytics</h3>
                         <p class="tw-text-gray-600 tw-leading-relaxed">
-                            Understand your logistics performance with visual dashboards. Track KPIs, identify bottlenecks, and optimize operations.
+                            Basic KPIs on Starter. Custom dashboards & widgets on Growth. Exportable reports & workflow automation on Enterprise.
                         </p>
                     </div>
                     
-                    <!-- Feature 5 -->
-                    <div class="card-blue">
-                        <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-phone tw-text-2xl tw-text-brand-blue"></i>
-                        </div>
-                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Mobile-First Design</h3>
-                        <p class="tw-text-gray-600 tw-leading-relaxed">
-                            Manage operations from anywhere. Full functionality on mobile devices, perfect for teams on the go.
-                        </p>
-                    </div>
-                    
-                    <!-- Feature 6 -->
+                    <!-- Feature 8 - Fleet Management -->
                     <div class="card-green">
-                        <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center tw-mb-6">
-                            <i class="bi bi-plug tw-text-2xl tw-text-brand-green"></i>
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-green-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-truck tw-text-2xl tw-text-brand-green"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-gray-800 tw-text-white tw-px-2.5 tw-py-1 tw-rounded-full">Enterprise</span>
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Fleet Management</h3>
+                        <p class="tw-text-gray-600 tw-leading-relaxed">
+                            Vehicle registry with capacities, types (truck/bike/EV), maintenance alerts. Assign vehicles to routes and drivers.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 9 - Integrations -->
+                    <div class="card-blue">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+                            <div class="tw-w-14 tw-h-14 tw-bg-blue-100 tw-rounded-xl tw-flex tw-items-center tw-justify-center">
+                                <i class="bi bi-plug tw-text-2xl tw-text-brand-blue"></i>
+                            </div>
+                            <span class="tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-wider tw-bg-blue-100 tw-text-brand-blue tw-px-2.5 tw-py-1 tw-rounded-full">All Plans</span>
                         </div>
                         <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-3">Easy Integrations</h3>
                         <p class="tw-text-gray-600 tw-leading-relaxed">
-                            Connect with your existing tools. REST API, webhooks, and pre-built integrations for popular platforms.
+                            REST API on all plans. Webhooks & rate comparisons on Growth. Custom carrier connectors & SSO on Enterprise.
                         </p>
                     </div>
                 </div>
@@ -732,35 +792,47 @@
                 <div class="tw-grid md:tw-grid-cols-3 tw-gap-6 tw-mb-8">
                     <div class="tw-bg-gray-50 tw-rounded-2xl tw-p-8 tw-border-2 tw-border-gray-200">
                         <h3 class="tw-text-lg tw-font-semibold tw-text-gray-500 tw-mb-2">STARTER</h3>
-                        <div class="tw-text-4xl tw-font-bold tw-text-gray-800 tw-mb-4">$19<span class="tw-text-lg tw-text-gray-500">/mo</span></div>
+                        <div class="tw-text-4xl tw-font-bold tw-text-gray-800 tw-mb-1">$19<span class="tw-text-lg tw-text-gray-500">/mo</span></div>
+                        <p class="tw-text-xs tw-text-brand-blue tw-font-semibold tw-uppercase tw-mb-4">Core Logistics Essentials</p>
                         <p class="tw-text-gray-600 tw-mb-6">Perfect for small teams getting started</p>
-                        <ul class="tw-text-left tw-space-y-3 tw-text-gray-600">
+                        <ul class="tw-text-left tw-space-y-3 tw-text-gray-600 tw-text-sm">
                             <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> 100 shipments/month</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Real-time tracking</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Basic route optimization</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Basic delay alerts (email)</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> KPI dashboard</li>
                             <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> 1 user seat</li>
-                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Email support</li>
                         </ul>
                     </div>
                     
                     <div class="tw-bg-gradient-to-b tw-from-brand-blue tw-to-brand-green tw-rounded-2xl tw-p-8 tw-text-white tw-relative tw-scale-105">
                         <div class="tw-absolute tw--top-4 tw-left-1/2 tw--translate-x-1/2 tw-bg-yellow-400 tw-text-gray-900 tw-text-xs tw-font-bold tw-px-4 tw-py-1 tw-rounded-full">MOST POPULAR</div>
                         <h3 class="tw-text-lg tw-font-semibold tw-text-white/80 tw-mb-2">GROWTH</h3>
-                        <div class="tw-text-4xl tw-font-bold tw-mb-4">$39<span class="tw-text-lg tw-text-white/80">/mo</span></div>
+                        <div class="tw-text-4xl tw-font-bold tw-mb-1">$39<span class="tw-text-lg tw-text-white/80">/mo</span></div>
+                        <p class="tw-text-xs tw-text-white/90 tw-font-semibold tw-uppercase tw-mb-4">Everything in Starter, plus:</p>
                         <p class="tw-text-white/80 tw-mb-6">For growing logistics operations</p>
-                        <ul class="tw-text-left tw-space-y-3">
+                        <ul class="tw-text-left tw-space-y-3 tw-text-sm">
                             <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> 500 shipments/month</li>
-                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> 3 user seats</li>
-                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> Priority support</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> Proof of Delivery (POD)</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> AI alerts (WhatsApp/SMS/email)</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> CVRP + multi-driver dispatch</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> Driver mobile/PWA</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check"></i> Inventory tracking &amp; team notes</li>
                         </ul>
                     </div>
                     
                     <div class="tw-bg-gray-50 tw-rounded-2xl tw-p-8 tw-border-2 tw-border-gray-200">
                         <h3 class="tw-text-lg tw-font-semibold tw-text-gray-500 tw-mb-2">ENTERPRISE</h3>
-                        <div class="tw-text-4xl tw-font-bold tw-text-gray-800 tw-mb-4">$79<span class="tw-text-lg tw-text-gray-500">/mo</span></div>
-                        <p class="tw-text-gray-600 tw-mb-6">For larger teams with advanced needs</p>
-                        <ul class="tw-text-left tw-space-y-3 tw-text-gray-600">
+                        <div class="tw-text-4xl tw-font-bold tw-text-gray-800 tw-mb-1">$79<span class="tw-text-lg tw-text-gray-500">/mo</span></div>
+                        <p class="tw-text-xs tw-text-brand-blue tw-font-semibold tw-uppercase tw-mb-4">Everything in Growth, plus:</p>
+                        <p class="tw-text-gray-600 tw-mb-6">Full platform for scaling teams</p>
+                        <ul class="tw-text-left tw-space-y-3 tw-text-gray-600 tw-text-sm">
                             <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Unlimited shipments</li>
-                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> 10 user seats</li>
-                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Dedicated support</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Fleet management &amp; maintenance</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Full CVRP solver + EV routing</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Workflow automation</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Exportable reports &amp; analytics</li>
+                            <li class="tw-flex tw-items-center tw-gap-2"><i class="bi bi-check tw-text-brand-green"></i> Unlimited users + SSO</li>
                         </ul>
                     </div>
                 </div>
