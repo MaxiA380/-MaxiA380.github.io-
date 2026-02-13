@@ -192,7 +192,7 @@
                             <p class="tw-mb-6 tw-leading-relaxed">
                                 Want to see Freytor in action? Book a personalized demo with our team and discover how we can optimize your logistics.
                             </p>
-                            <a href="signup.html" class="tw-inline-block tw-bg-white tw-text-brand-blue tw-px-8 tw-py-3 tw-rounded-lg tw-font-semibold tw-transition-all hover:tw-scale-105 hover:tw-shadow-xl">
+                            <a href="contact.html" onclick="scrollToForm(event)" class="tw-inline-block tw-bg-white tw-text-brand-blue tw-px-8 tw-py-3 tw-rounded-lg tw-font-semibold tw-transition-all hover:tw-scale-105 hover:tw-shadow-xl">
                                 Book a Demo
                             </a>
                         </div>
@@ -267,5 +267,25 @@
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>
         <script src="./auth.js"></script>
+        <script>
+            // Scroll to form when "Book a Demo" is clicked
+            function scrollToForm(e) {
+                e.preventDefault();
+                const form = document.getElementById('contact-form');
+                if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Pre-select "Sales Inquiry" in the subject dropdown
+                    const subjectSelect = form.querySelector('select[name="subject"]');
+                    if (subjectSelect) {
+                        subjectSelect.value = 'sales';
+                    }
+                    // Focus on name field
+                    const nameInput = form.querySelector('input[name="name"]');
+                    if (nameInput) {
+                        setTimeout(() => nameInput.focus(), 500);
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

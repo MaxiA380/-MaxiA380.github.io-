@@ -100,8 +100,25 @@ function hideFieldError(fieldId) {
 // Social login handler
 function socialLogin(provider) {
     console.log(`Initiating ${provider} login...`);
-    // In a real app, this would redirect to OAuth provider
-    alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be initiated here. This is a demo.`);
+    
+    // For demo purposes, show a message and redirect to signup
+    const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+    
+    // Show loading state on the button that was clicked
+    const buttons = document.querySelectorAll(`button[onclick*="${provider}"]`);
+    buttons.forEach(btn => {
+        btn.disabled = true;
+        btn.innerHTML = `<i class="bi bi-arrow-repeat tw-animate-spin tw-mr-2"></i>Connecting to ${providerName}...`;
+    });
+    
+    // In production, this would redirect to:
+    // Google: https://accounts.google.com/o/oauth2/v2/auth
+    // Microsoft: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+    
+    setTimeout(() => {
+        // For now, redirect to signup page with a parameter
+        window.location.href = `signup.html?provider=${provider}`;
+    }, 1000);
 }
 
 // Login Form Handler
@@ -301,17 +318,74 @@ if (signupForm) {
 // Contact Form Handler - Now using FormSubmit
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
+    // Clear error styling when user types
+    const inputs = contactForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('tw-border-red-500');
+            const messageDiv = document.getElementById('contact-message');
+            if (messageDiv) {
+                messageDiv.classList.add('tw-hidden');
+            }
+        });
+    });
+    
     contactForm.addEventListener('submit', (e) => {
-        // FormSubmit will handle the submission
-        // Just show loading state before form submits naturally
+        // Validate form fields before submission
+        const name = contactForm.querySelector('input[name="name"]');
+        const email = contactForm.querySelector('input[name="email"]');
+        const subject = contactForm.querySelector('select[name="subject"]');
+        const message = contactForm.querySelector('textarea[name="message"]');
+        
+        let isValid = true;
+        
+        if (!name || name.value.trim().length < 2) {
+            isValid = false;
+            if (name) name.classList.add('tw-border-red-500');
+        }
+        
+        if (!email || !validateEmail(email.value)) {
+            isValid = false;
+            if (email) email.classList.add('tw-border-red-500');
+        }
+        
+        if (!subject || !subject.value) {
+            isValid = false;
+            if (subject) subject.classList.add('tw-border-red-500');
+        }
+        
+        if (!message || message.value.trim().length < 10) {
+            isValid = false;
+            if (message) message.classList.add('tw-border-red-500');
+        }
+        
+        if (!isValid) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('contact-message');
+            if (messageDiv) {
+                messageDiv.classList.remove('tw-hidden');
+                messageDiv.classList.add('tw-bg-red-100', 'tw-text-red-700', 'tw-border', 'tw-border-red-300');
+                messageDiv.innerHTML = '<i class="bi bi-exclamation-circle tw-mr-2"></i>Please fill in all required fields correctly.';
+            }
+            // Scroll to the first error
+            const firstError = contactForm.querySelector('.tw-border-red-500');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstError.focus();
+            }
+            return;
+        }
+        
+        // Show loading state
         const submitBtn = document.getElementById('contact-submit-btn');
         const btnText = document.getElementById('contact-btn-text');
         const btnSpinner = document.getElementById('contact-btn-spinner');
         
-        // Show loading state
-        submitBtn.disabled = true;
-        btnText.classList.add('tw-hidden');
-        btnSpinner.classList.remove('tw-hidden');
+        if (submitBtn && btnText && btnSpinner) {
+            submitBtn.disabled = true;
+            btnText.classList.add('tw-hidden');
+            btnSpinner.classList.remove('tw-hidden');
+        }
         
         // Form will submit naturally to FormSubmit
         // User will be redirected to thank-you.html

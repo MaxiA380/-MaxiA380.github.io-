@@ -41,17 +41,25 @@
         <div class="tw-flex tw-h-full tw-w-[300px] tw-flex-col tw-gap-6 max-md:tw-w-full">
             <h2 class="tw-text-3xl tw-text-brand-blue tw-font-bold max-md:tw-text-xl" data-i18n="footer.newsletter">Newsletter</h2>
             <p class="tw-text-gray-700 tw-text-sm" data-i18n="footer.newsletter.desc">Get logistics tips, product updates, and industry insights delivered to your inbox.</p>
-            <form id="newsletter-form" class="tw-flex tw-flex-col tw-gap-3">
+            <form id="newsletter-form" action="https://formsubmit.co/mximilian.meier@gmail.com" method="POST" class="tw-flex tw-flex-col tw-gap-3">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://maxia380.github.io/thank-you.html">
+                <input type="hidden" name="_subject" value="New Newsletter Subscription - Freytor">
+                <input type="hidden" name="_template" value="box">
+                <input type="text" name="_honey" style="display:none">
+                
                 <div class="tw-flex tw-gap-2">
                     <input 
                         type="email" 
                         id="newsletter-email"
+                        name="email"
                         data-i18n-placeholder="footer.newsletter.email"
                         placeholder="Enter your email" 
                         required
                         class="tw-flex-1 tw-px-4 tw-py-2 tw-rounded-lg tw-border tw-border-gray-300 tw-text-sm focus:tw-outline-none focus:tw-border-brand-blue"
                     />
-                    <button type="submit" class="tw-bg-brand-blue tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-text-sm hover:tw-bg-brand-blue-dark tw-transition-colors">
+                    <button type="submit" id="newsletter-submit-btn" class="tw-bg-brand-blue tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-text-sm hover:tw-bg-brand-blue-dark tw-transition-colors">
                         <i class="bi bi-send"></i>
                     </button>
                 </div>
@@ -169,30 +177,26 @@
     const newsletterForm = document.getElementById('newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('newsletter-email').value;
-            const btn = newsletterForm.querySelector('button');
-            const originalContent = btn.innerHTML;
+            const email = document.getElementById('newsletter-email');
+            const btn = document.getElementById('newsletter-submit-btn');
             
-            // Show loading
-            btn.disabled = true;
-            btn.innerHTML = '<i class="bi bi-arrow-repeat tw-animate-spin"></i>';
+            // Validate email
+            if (!email || !email.value || !email.value.includes('@')) {
+                e.preventDefault();
+                email.classList.add('tw-border-red-500');
+                return;
+            }
             
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerHTML = '<i class="bi bi-check-lg"></i>';
-                btn.classList.remove('tw-bg-brand-blue');
-                btn.classList.add('tw-bg-brand-green');
-                document.getElementById('newsletter-email').value = '';
-                
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    btn.disabled = false;
-                    btn.innerHTML = originalContent;
-                    btn.classList.remove('tw-bg-brand-green');
-                    btn.classList.add('tw-bg-brand-blue');
-                }, 2000);
-            }, 1000);
+            email.classList.remove('tw-border-red-500');
+            
+            // Show loading state
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="bi bi-arrow-repeat tw-animate-spin"></i>';
+            }
+            
+            // Let the form submit naturally to FormSubmit
+            // User will be redirected to thank-you.html
         });
     }
 </script>

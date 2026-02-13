@@ -171,5 +171,24 @@
         <script src="./index.js"></script>
         <script src="./components/components.js"></script>
         <script src="./auth.js"></script>
+        <script>
+            // Check if user came from social login
+            const urlParams = new URLSearchParams(window.location.search);
+            const provider = urlParams.get('provider');
+            
+            if (provider) {
+                const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+                const messageDiv = document.getElementById('login-message');
+                
+                if (messageDiv) {
+                    messageDiv.classList.remove('tw-hidden');
+                    messageDiv.classList.add('tw-bg-blue-100', 'tw-text-blue-700', 'tw-border', 'tw-border-blue-300');
+                    messageDiv.innerHTML = `<i class="bi bi-info-circle tw-mr-2"></i>In a production environment, you would be authenticated via ${providerName}. For this demo, please login using the form below.`;
+                }
+                
+                // Clean up URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        </script>
     </body>
 </html>
