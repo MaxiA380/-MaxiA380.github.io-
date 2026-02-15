@@ -162,3 +162,13 @@ function changeLanguage(lang) {
 // Make functions globally available
 window.toggleLanguageMenu = toggleLanguageMenu;
 window.changeLanguage = changeLanguage;
+
+// Initialize components immediately if DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        ComponentLoader.init();
+    });
+} else {
+    // DOM is already loaded, initialize immediately
+    ComponentLoader.init();
+}
