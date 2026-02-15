@@ -5,7 +5,6 @@
 
 class I18n {
     constructor() {
-        this.currentLanguage = this.getStoredLanguage() || this.detectBrowserLanguage() || 'en';
         this.supportedLanguages = ['en', 'de', 'es'];
         this.languageNames = {
             'en': 'English',
@@ -17,6 +16,7 @@ class I18n {
             'de': '🇩🇪',
             'es': '🇪🇸'
         };
+        this.currentLanguage = this.getStoredLanguage() || this.detectBrowserLanguage() || 'en';
     }
 
     /**
@@ -32,6 +32,7 @@ class I18n {
      */
     detectBrowserLanguage() {
         const browserLang = navigator.language || navigator.userLanguage;
+        if (!browserLang) return 'en';
         const langCode = browserLang.split('-')[0];
         return this.supportedLanguages.includes(langCode) ? langCode : 'en';
     }
