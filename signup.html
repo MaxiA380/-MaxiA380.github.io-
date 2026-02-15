@@ -34,9 +34,9 @@
                             </div>
                         </div>
                         <h1 class="tw-text-5xl tw-font-bold tw-mb-3 tw-leading-[1.2]">
-                            Start Your <span class="tw-text-brand-green">Free Pilot</span>
+                            <span data-i18n="signup.title1">Start Your</span> <span class="tw-text-brand-green" data-i18n="signup.title2">Free Pilot</span>
                         </h1>
-                        <p class="tw-text-gray-600 tw-text-lg">30 days free • No credit card • We import your first 20 shipments</p>
+                        <p class="tw-text-gray-600 tw-text-lg" data-i18n="signup.subtitle">30 days free • No credit card • We import your first 20 shipments</p>
                     </div>
 
                     <!-- Success/Error Messages -->
@@ -45,7 +45,7 @@
                     <form id="signup-form" class="tw-space-y-5">
                         <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
                             <div>
-                                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.firstname">
                                     First Name *
                                 </label>
                                 <input 
@@ -55,12 +55,13 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg"
                                     placeholder="John"
+                                    data-i18n-placeholder="signup.firstname.placeholder"
                                 />
                                 <span class="tw-text-red-500 tw-text-sm tw-hidden" id="first-name-error"></span>
                             </div>
 
                             <div>
-                                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.lastname">
                                     Last Name *
                                 </label>
                                 <input 
@@ -70,13 +71,14 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg"
                                     placeholder="Doe"
+                                    data-i18n-placeholder="signup.lastname.placeholder"
                                 />
                                 <span class="tw-text-red-500 tw-text-sm tw-hidden" id="last-name-error"></span>
                             </div>
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.email">
                                 Email Address *
                             </label>
                             <div class="tw-relative">
@@ -87,6 +89,7 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg tw-pl-10"
                                     placeholder="you@example.com"
+                                    data-i18n-placeholder="signup.email.placeholder"
                                 />
                                 <i class="bi bi-envelope tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                             </div>
@@ -94,7 +97,7 @@
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.company">
                                 Company Name *
                             </label>
                             <div class="tw-relative">
@@ -105,6 +108,7 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg tw-pl-10"
                                     placeholder="Your Company"
+                                    data-i18n-placeholder="signup.company.placeholder"
                                 />
                                 <i class="bi bi-building tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                             </div>
@@ -112,7 +116,7 @@
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.phone">
                                 Phone Number (Optional)
                             </label>
                             <div class="tw-relative">
@@ -122,13 +126,14 @@
                                     name="phone"
                                     class="input tw-w-full tw-rounded-lg tw-pl-10"
                                     placeholder="+1 (555) 000-0000"
+                                    data-i18n-placeholder="signup.phone.placeholder"
                                 />
                                 <i class="bi bi-telephone tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                             </div>
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.password">
                                 Password *
                             </label>
                             <div class="tw-relative">
@@ -139,6 +144,7 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg tw-pl-10 tw-pr-10"
                                     placeholder="Create a strong password"
+                                    data-i18n-placeholder="signup.password.placeholder"
                                 />
                                 <i class="bi bi-lock tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                                 <button type="button" onclick="togglePassword('signup-password')" class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400 hover:tw-text-gray-600">
@@ -153,12 +159,12 @@
                                     <div class="tw-h-1 tw-w-1/4 tw-bg-gray-200 tw-rounded"></div>
                                 </div>
                             </div>
-                            <p class="tw-text-xs tw-text-gray-500 tw-mt-1">Must be at least 8 characters with uppercase, lowercase, and number</p>
+                            <p class="tw-text-xs tw-text-gray-500 tw-mt-1" data-i18n="signup.password.hint">Must be at least 8 characters with uppercase, lowercase, and number</p>
                             <span class="tw-text-red-500 tw-text-sm tw-hidden" id="signup-password-error"></span>
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="signup.plan">
                                 Choose a Plan
                             </label>
                             <select 
@@ -167,10 +173,10 @@
                                 required
                                 class="input tw-w-full tw-rounded-lg"
                             >
-                                <option value="">Select a plan</option>
-                                <option value="starter">Starter - $19/month</option>
-                                <option value="growth" selected>Growth - $39/month (Most Popular)</option>
-                                <option value="enterprise">Enterprise - $79/month</option>
+                                <option value="" data-i18n="signup.plan.select">Select a plan</option>
+                                <option value="starter" data-i18n="signup.plan.starter">Starter - $19/month</option>
+                                <option value="growth" selected data-i18n="signup.plan.growth">Growth - $39/month (Most Popular)</option>
+                                <option value="enterprise" data-i18n="signup.plan.enterprise">Enterprise - $79/month</option>
                             </select>
                         </div>
 
@@ -183,7 +189,7 @@
                                 class="tw-w-4 tw-h-4 tw-mt-1 tw-text-brand-blue tw-border-gray-300 tw-rounded focus:tw-ring-brand-blue tw-cursor-pointer"
                             />
                             <label for="terms" class="tw-ml-2 tw-text-sm tw-text-gray-600 tw-cursor-pointer">
-                                I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Terms of Service</a> and <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium">Privacy Policy</a>
+                                <span data-i18n="signup.terms">I agree to the</span> <a href="terms.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium" data-i18n="signup.terms.tos">Terms of Service</a> <span data-i18n="signup.terms.and">and</span> <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="tw-text-brand-blue hover:tw-underline tw-font-medium" data-i18n="signup.terms.privacy">Privacy Policy</a>
                             </label>
                         </div>
 
@@ -193,10 +199,10 @@
                         </div>
 
                         <button type="submit" id="signup-btn" class="btn tw-w-full tw-justify-center tw-text-lg tw-py-4">
-                            <span id="signup-btn-text">Start Free Pilot</span>
+                            <span id="signup-btn-text" data-i18n="signup.submit">Start Free Pilot</span>
                             <span id="signup-btn-spinner" class="tw-hidden">
                                 <i class="bi bi-arrow-repeat tw-animate-spin tw-mr-2"></i>
-                                Creating account...
+                                <span data-i18n="signup.submitting">Creating account...</span>
                             </span>
                         </button>
                     </form>
@@ -207,25 +213,25 @@
                                 <div class="tw-w-full tw-border-t tw-border-gray-200"></div>
                             </div>
                             <div class="tw-relative tw-flex tw-justify-center tw-text-sm">
-                                <span class="tw-px-3 tw-bg-white tw-text-gray-500 tw-font-medium">Or sign up with</span>
+                                <span class="tw-px-3 tw-bg-white tw-text-gray-500 tw-font-medium" data-i18n="signup.or">Or sign up with</span>
                             </div>
                         </div>
 
                         <div class="tw-mt-6 tw-grid tw-grid-cols-2 tw-gap-4">
                             <button type="button" onclick="socialLogin('google')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-brand-blue hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
                                 <i class="bi bi-google tw-text-lg tw-mr-2"></i>
-                                Google
+                                <span data-i18n="signup.google">Google</span>
                             </button>
                             <button type="button" onclick="socialLogin('microsoft')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-brand-blue hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
                                 <i class="bi bi-microsoft tw-text-lg tw-mr-2"></i>
-                                Microsoft
+                                <span data-i18n="signup.microsoft">Microsoft</span>
                             </button>
                         </div>
                     </div>
 
                     <p class="tw-mt-8 tw-text-center tw-text-sm tw-text-gray-600">
-                        Already have an account?
-                        <a href="login.html" class="tw-font-bold tw-text-brand-blue hover:tw-underline">
+                        <span data-i18n="signup.hasaccount">Already have an account?</span>
+                        <a href="login.html" class="tw-font-bold tw-text-brand-blue hover:tw-underline" data-i18n="signup.signin">
                             Sign in
                         </a>
                     </p>
@@ -235,22 +241,22 @@
                         <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-flex-wrap tw-text-xs tw-text-gray-500">
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-shield-check tw-text-brand-green tw-text-lg"></i>
-                                <span>256-bit SSL</span>
+                                <span data-i18n="signup.trust.ssl">256-bit SSL</span>
                             </div>
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-lock-fill tw-text-brand-green tw-text-lg"></i>
-                                <span>SOC 2 Compliant</span>
+                                <span data-i18n="signup.trust.soc2">SOC 2 Compliant</span>
                             </div>
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-patch-check-fill tw-text-brand-green tw-text-lg"></i>
-                                <span>GDPR Ready</span>
+                                <span data-i18n="signup.trust.gdpr">GDPR Ready</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="tw-mt-6 tw-text-center tw-text-sm tw-text-gray-600">
-                    <a href="index.html" class="hover:tw-text-brand-blue tw-transition-colors tw-font-medium">
+                    <a href="index.html" class="hover:tw-text-brand-blue tw-transition-colors tw-font-medium" data-i18n="signup.back">
                         <i class="bi bi-arrow-left tw-mr-1"></i> Back to home
                     </a>
                 </div>

@@ -63,24 +63,24 @@
                         <i class="bi bi-send"></i>
                     </button>
                 </div>
-                <p class="tw-text-xs tw-text-gray-500">No spam, unsubscribe anytime.</p>
+                <p class="tw-text-xs tw-text-gray-500" data-i18n="footer.newsletter.nospam">No spam, unsubscribe anytime.</p>
             </form>
 
             <!-- Trust Badges -->
             <div class="tw-mt-4">
-                <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-3">Trusted & Secure</p>
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-3" data-i18n="footer.trust.title">Trusted & Secure</p>
                 <div class="tw-flex tw-flex-wrap tw-gap-3">
                     <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
                         <i class="bi bi-shield-lock-fill tw-text-brand-green"></i>
-                        <span>SSL Secured</span>
+                        <span data-i18n="footer.trust.ssl">SSL Secured</span>
                     </div>
                     <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
                         <i class="bi bi-patch-check-fill tw-text-brand-blue"></i>
-                        <span>GDPR Ready</span>
+                        <span data-i18n="footer.trust.gdpr">GDPR Ready</span>
                     </div>
                     <div class="tw-flex tw-items-center tw-gap-1 tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-xs tw-text-gray-600 tw-shadow-sm">
                         <i class="bi bi-award-fill tw-text-amber-500"></i>
-                        <span>SOC 2</span>
+                        <span data-i18n="footer.trust.soc2">SOC 2</span>
                     </div>
                 </div>
             </div>
@@ -107,14 +107,14 @@
 <!-- Cookie Consent Banner -->
 <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-consent-title" aria-describedby="cookie-consent-description">
     <div class="cookie-consent__text">
-        <strong id="cookie-consent-title">🍪 Cookie Notice</strong>
-        <p id="cookie-consent-description">We use cookies to improve your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. Read our <a href="privacy.html">Privacy Policy</a> for more details.</p>
+        <strong id="cookie-consent-title" data-i18n="cookie.title">🍪 Cookie Notice</strong>
+        <p id="cookie-consent-description" data-i18n="cookie.desc">We use cookies to improve your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. Read our <a href="privacy.html">Privacy Policy</a> for more details.</p>
     </div>
     <div class="cookie-consent__buttons">
-        <button type="button" class="cookie-consent__btn cookie-consent__btn--accept" onclick="acceptCookies()">
+        <button type="button" class="cookie-consent__btn cookie-consent__btn--accept" onclick="acceptCookies()" data-i18n="cookie.accept">
             Accept All
         </button>
-        <button type="button" class="cookie-consent__btn cookie-consent__btn--decline" onclick="declineCookies()">
+        <button type="button" class="cookie-consent__btn cookie-consent__btn--decline" onclick="declineCookies()" data-i18n="cookie.decline">
             Decline
         </button>
     </div>

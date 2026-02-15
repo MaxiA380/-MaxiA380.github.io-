@@ -34,9 +34,9 @@
                             </div>
                         </div>
                         <h1 class="tw-text-5xl tw-font-bold tw-mb-3 tw-leading-[1.2]">
-                            Welcome <span class="tw-text-brand-blue">Back</span>
+                            <span data-i18n="login.title1">Welcome</span> <span class="tw-text-brand-blue" data-i18n="login.title2">Back</span>
                         </h1>
-                        <p class="tw-text-gray-600 tw-text-lg">Sign in to your Freytor account</p>
+                        <p class="tw-text-gray-600 tw-text-lg" data-i18n="login.subtitle">Sign in to your Freytor account</p>
                     </div>
 
                     <!-- Success/Error Messages -->
@@ -44,7 +44,7 @@
 
                     <form id="login-form" class="tw-space-y-6">
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="login.email">
                                 Email Address *
                             </label>
                             <div class="tw-relative">
@@ -55,6 +55,7 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg tw-pl-10"
                                     placeholder="you@example.com"
+                                    data-i18n-placeholder="login.email.placeholder"
                                 />
                                 <i class="bi bi-envelope tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                             </div>
@@ -62,7 +63,7 @@
                         </div>
 
                         <div>
-                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">
+                            <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2" data-i18n="login.password">
                                 Password *
                             </label>
                             <div class="tw-relative">
@@ -73,6 +74,7 @@
                                     required
                                     class="input tw-w-full tw-rounded-lg tw-pl-10 tw-pr-10"
                                     placeholder="Enter your password"
+                                    data-i18n-placeholder="login.password.placeholder"
                                 />
                                 <i class="bi bi-lock tw-absolute tw-left-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400"></i>
                                 <button type="button" onclick="togglePassword('password')" class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400 hover:tw-text-gray-600">
@@ -89,9 +91,9 @@
                                     name="remember"
                                     class="tw-w-4 tw-h-4 tw-text-brand-blue tw-border-gray-300 tw-rounded focus:tw-ring-brand-blue tw-cursor-pointer"
                                 />
-                                <span class="tw-ml-2 tw-text-sm tw-text-gray-600">Remember me</span>
+                                <span class="tw-ml-2 tw-text-sm tw-text-gray-600" data-i18n="login.remember">Remember me</span>
                             </label>
-                            <a href="forgot-password.html" class="tw-text-sm tw-text-brand-blue hover:tw-underline tw-font-medium">
+                            <a href="forgot-password.html" class="tw-text-sm tw-text-brand-blue hover:tw-underline tw-font-medium" data-i18n="login.forgot">
                                 Forgot password?
                             </a>
                         </div>
@@ -102,10 +104,10 @@
                         </div>
 
                         <button type="submit" id="login-btn" class="btn tw-w-full tw-justify-center tw-text-lg tw-py-4">
-                            <span id="login-btn-text">Sign In</span>
+                            <span id="login-btn-text" data-i18n="login.submit">Sign In</span>
                             <span id="login-btn-spinner" class="tw-hidden">
                                 <i class="bi bi-arrow-repeat tw-animate-spin tw-mr-2"></i>
-                                Signing in...
+                                <span data-i18n="login.submitting">Signing in...</span>
                             </span>
                         </button>
                     </form>
@@ -116,25 +118,25 @@
                                 <div class="tw-w-full tw-border-t tw-border-gray-200"></div>
                             </div>
                             <div class="tw-relative tw-flex tw-justify-center tw-text-sm">
-                                <span class="tw-px-3 tw-bg-white tw-text-gray-500 tw-font-medium">Or continue with</span>
+                                <span class="tw-px-3 tw-bg-white tw-text-gray-500 tw-font-medium" data-i18n="login.or">Or continue with</span>
                             </div>
                         </div>
 
                         <div class="tw-mt-6 tw-grid tw-grid-cols-2 tw-gap-4">
                             <button type="button" onclick="socialLogin('google')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-brand-blue hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
                                 <i class="bi bi-google tw-text-lg tw-mr-2"></i>
-                                Google
+                                <span data-i18n="login.google">Google</span>
                             </button>
                             <button type="button" onclick="socialLogin('microsoft')" class="tw-flex tw-items-center tw-justify-center tw-px-4 tw-py-3 tw-border-2 tw-border-gray-200 tw-rounded-lg tw-bg-white tw-text-sm tw-font-semibold tw-text-gray-700 hover:tw-border-brand-blue hover:tw-bg-blue-50 tw-transition-all tw-duration-300">
                                 <i class="bi bi-microsoft tw-text-lg tw-mr-2"></i>
-                                Microsoft
+                                <span data-i18n="login.microsoft">Microsoft</span>
                             </button>
                         </div>
                     </div>
 
                     <p class="tw-mt-8 tw-text-center tw-text-sm tw-text-gray-600">
-                        Don't have an account?
-                        <a href="signup.html" class="tw-font-bold tw-text-brand-blue hover:tw-underline">
+                        <span data-i18n="login.noaccount">Don't have an account?</span>
+                        <a href="signup.html" class="tw-font-bold tw-text-brand-blue hover:tw-underline" data-i18n="login.signup">
                             Sign up for free
                         </a>
                     </p>
@@ -144,22 +146,22 @@
                         <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-flex-wrap tw-text-xs tw-text-gray-500">
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-shield-check tw-text-brand-green tw-text-lg"></i>
-                                <span>256-bit SSL</span>
+                                <span data-i18n="login.trust.ssl">256-bit SSL</span>
                             </div>
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-lock-fill tw-text-brand-green tw-text-lg"></i>
-                                <span>SOC 2 Compliant</span>
+                                <span data-i18n="login.trust.soc2">SOC 2 Compliant</span>
                             </div>
                             <div class="tw-flex tw-items-center tw-gap-2">
                                 <i class="bi bi-patch-check-fill tw-text-brand-green tw-text-lg"></i>
-                                <span>GDPR Ready</span>
+                                <span data-i18n="login.trust.gdpr">GDPR Ready</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="tw-mt-6 tw-text-center tw-text-sm tw-text-gray-600">
-                    <a href="index.html" class="hover:tw-text-brand-blue tw-transition-colors tw-font-medium">
+                    <a href="index.html" class="hover:tw-text-brand-blue tw-transition-colors tw-font-medium" data-i18n="login.back">
                         <i class="bi bi-arrow-left tw-mr-1"></i> Back to home
                     </a>
                 </div>
