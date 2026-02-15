@@ -282,6 +282,15 @@ const translations = {
         'footer.copyright': '© 2026 Freytor. All rights reserved.',
         
         // About Page
+        'about.badge': 'Our Story',
+        'about.hero.title1': 'Built for',
+        'about.hero.title2': 'SMEs,',
+        'about.hero.title3': 'by logistics experts.',
+        'about.hero.subtitle': 'We started Freytor because we saw small and medium businesses in emerging markets struggling with enterprise-level logistics complexity. Today, we\'re building the platform we wish existed when we started.',
+        'about.stats.companies': 'Active companies',
+        'about.stats.shipments': 'Shipments tracked',
+        'about.stats.carriers': 'Carrier integrations',
+        'about.stats.uptime': 'Uptime SLA',
         'about.title': 'About Freytor',
         'about.subtitle': 'Simplifying logistics for small and medium businesses in emerging markets. One dashboard, unlimited possibilities.',
         'about.mission.title': 'Our Mission',
@@ -640,6 +649,15 @@ const translations = {
         'footer.copyright': '© 2026 Freytor. Alle Rechte vorbehalten.',
         
         // About Page
+        'about.badge': 'Unsere Geschichte',
+        'about.hero.title1': 'Entwickelt für',
+        'about.hero.title2': 'KMU,',
+        'about.hero.title3': 'von Logistikexperten.',
+        'about.hero.subtitle': 'Wir haben Freytor gegründet, weil wir gesehen haben, wie kleine und mittlere Unternehmen in Schwellenländern mit der Komplexität der Unternehmenslogistik kämpfen. Heute bauen wir die Plattform, die wir uns gewünscht hätten, als wir anfingen.',
+        'about.stats.companies': 'Aktive Unternehmen',
+        'about.stats.shipments': 'Sendungen verfolgt',
+        'about.stats.carriers': 'Spediteur-Integrationen',
+        'about.stats.uptime': 'Verfügbarkeits-SLA',
         'about.title': 'Über Freytor',
         'about.subtitle': 'Vereinfachung der Logistik für kleine und mittlere Unternehmen in Schwellenländern. Ein Dashboard, unbegrenzte Möglichkeiten.',
         'about.mission.title': 'Unsere Mission',
@@ -998,6 +1016,15 @@ const translations = {
         'footer.copyright': '© 2026 Freytor. Todos los derechos reservados.',
         
         // About Page
+        'about.badge': 'Nuestra Historia',
+        'about.hero.title1': 'Construido para',
+        'about.hero.title2': 'PYMES,',
+        'about.hero.title3': 'por expertos en logística.',
+        'about.hero.subtitle': 'Comenzamos Freytor porque vimos a las pequeñas y medianas empresas en mercados emergentes luchando con la complejidad logística de nivel empresarial. Hoy, estamos construyendo la plataforma que hubiéramos deseado cuando empezamos.',
+        'about.stats.companies': 'Empresas activas',
+        'about.stats.shipments': 'Envíos rastreados',
+        'about.stats.carriers': 'Integraciones de transportistas',
+        'about.stats.uptime': 'SLA de tiempo de actividad',
         'about.title': 'Acerca de Freytor',
         'about.subtitle': 'Simplificando la logística para pequeñas y medianas empresas en mercados emergentes. Un panel, posibilidades ilimitadas.',
         'about.mission.title': 'Nuestra misión',
