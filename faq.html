@@ -54,6 +54,9 @@
                     <button onclick="filterFAQ('shipping')" class="faq-filter-btn" data-category="shipping">
                         Shipping & Logistics
                     </button>
+                    <button onclick="filterFAQ('features')" class="faq-filter-btn" data-category="features">
+                        New Features
+                    </button>
                 </div>
 
                 <!-- FAQ Accordion -->
@@ -81,7 +84,7 @@
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
                         <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
-                            <p>You can be up and running in minutes! Simply sign up for a free 14-day trial, connect your preferred carriers, and start shipping. Our intuitive onboarding process guides you through the setup, and our support team is available to help if needed. No lengthy training sessions or complex configurations required.</p>
+                            <p>You can be up and running in under 10 minutes! Start your 30-day free pilot, connect your preferred carriers, and we’ll even import your first 20 shipments for free. Every plan includes a guided onboarding call where we walk you through the platform and show you predicted savings. No lengthy training sessions or complex configurations required.</p>
                         </div>
                     </div>
 
@@ -90,12 +93,12 @@
                         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
                             <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
                                 <i class="bi bi-question-circle tw-text-brand-green tw-text-xl tw-mt-1" aria-hidden="true"></i>
-                                <span class="tw-text-left">How does the free trial work?</span>
+                                <span class="tw-text-left">How does the free pilot work?</span>
                             </div>
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
                         <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
-                            <p>Our 14-day free trial gives you full access to all features of your chosen plan. No credit card is required to start. You can process shipments, track packages, and explore all features risk-free. After 14 days, you can choose to subscribe to continue using Freytor, or simply let the trial expire with no obligations.</p>
+                            <p>We offer a 30-day free pilot (not just a trial) with full access to all features of your chosen plan. No credit card required. We’ll import your first 20 shipments free behind the scenes, give you a guided onboarding call, and show you the savings. After 30 days, choose to subscribe to continue using Freytor, or simply let the pilot expire with no obligations.</p>
                         </div>
                     </div>
 
@@ -175,7 +178,7 @@
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
                         <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
-                            <p>We support over 100 carriers globally, including major international carriers like DHL, FedEx, UPS, and local/regional carriers across emerging markets. Our Enterprise plan also allows for custom carrier integrations if you work with specialized logistics providers.</p>
+                            <p>We support over 100 carriers globally, including major international providers like DHL, FedEx, and UPS, plus local and regional carriers across emerging markets in Latin America, Africa, and the Middle East. With our carrier network expansion, we’re continuously adding emerging-market providers. Our Enterprise plan also allows for custom carrier integrations and auto-fetches carrier rates/quotes for cost comparisons.</p>
                         </div>
                     </div>
 
@@ -188,7 +191,7 @@
                             <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
                         </button>
                         <div class="faq-answer" id="faq-answer-10" role="region" aria-labelledby="faq-question-10">
-                            <p>Yes! Our smart route optimization helps reduce delivery times and fuel costs. Our analytics show you which carriers offer the best rates for different routes, and we help you consolidate shipments when possible. On average, our customers save 10-15% on logistics costs within the first 3 months.</p>
+                            <p>Yes! Our capacity-aware CVRP route optimization (considering vehicle weight/volume limits) saves 10–20% on fuel alone. AI delay predictions reduce missed deliveries, and proof of delivery eliminates disputes. Carrier rate comparisons ensure you pick the best price for each shipment. On average, customers see 25–40% overall cost reductions within the first 3 months.</p>
                         </div>
                     </div>
 
@@ -217,6 +220,85 @@
                             <p>We offer email support for all plans, with typical response times under 2 hours during business hours. Growth and Enterprise customers get priority support, including phone and live chat options. Enterprise customers also receive a dedicated account manager and 24/7 premium support for critical issues.</p>
                         </div>
                     </div>
+
+                    <!-- New Features Questions -->
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-13" id="faq-question-13">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">Do I need GPS hardware or trackers to use Freytor?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-13" role="region" aria-labelledby="faq-question-13">
+                            <p>No. Freytor is 100% hardware-free. We use carrier APIs and simple driver check-ins via our mobile app for full shipment visibility. There are no GPS trackers to buy, no devices to install, and no hardware costs. This makes setup fast (under 10 minutes) and keeps your total cost of ownership dramatically lower than traditional fleet solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-14" id="faq-question-14">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">What is Proof of Delivery (POD) and how does it work?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-14" role="region" aria-labelledby="faq-question-14">
+                            <p>Proof of Delivery lets your drivers upload photos, digital signatures, and delivery notes directly from their phone when a shipment is completed. It automatically closes the shipment record and notifies the customer. This eliminates delivery disputes, provides accountability, and gives you a digital paper trail. Available on Growth and Enterprise plans.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-15" id="faq-question-15">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">What is CVRP route optimization?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-15" role="region" aria-labelledby="faq-question-15">
+                            <p>CVRP (Capacitated Vehicle Routing Problem) optimization considers vehicle weight and volume limits when planning multi-stop routes for multiple drivers. Unlike basic routing, CVRP ensures no vehicle is overloaded and finds the most fuel-efficient paths. Our Growth plan includes CVRP with capacity and multi-stop support, while Enterprise adds a full Google OR-Tools solver integration and EV/sustainability routing. Users typically see 10-20% fuel savings.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-16" id="faq-question-16">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">Is there a driver/navigator app?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-16" role="region" aria-labelledby="faq-question-16">
+                            <p>Yes! Our lightweight Progressive Web App (PWA) works on any smartphone — no app store download required. Drivers receive route assignments, get step-by-step navigation, check in/out at each stop, and handle proof of delivery (photos, signatures, notes). Everything syncs in real-time with your web dashboard. Available on Growth and Enterprise plans.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-17" id="faq-question-17">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">Does Freytor support sustainability/EV routing?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-17" role="region" aria-labelledby="faq-question-17">
+                            <p>Yes! Our Enterprise plan includes sustainability add-ons: prefer electric vehicles in route planning when flagged, view CO2 emissions estimates per route, and track your fleet's carbon footprint over time. This appeals to eco-conscious SMEs and can be a competitive edge in green-focused markets.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="features">
+                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-answer-18" id="faq-question-18">
+                            <div class="tw-flex tw-items-start tw-gap-3 tw-flex-1">
+                                <i class="bi bi-question-circle tw-text-purple-600 tw-text-xl tw-mt-1" aria-hidden="true"></i>
+                                <span class="tw-text-left">Can I import data from WhatsApp or local carrier exports?</span>
+                            </div>
+                            <i class="bi bi-chevron-down tw-text-gray-400 tw-transition-transform tw-duration-300" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-18" role="region" aria-labelledby="faq-question-18">
+                            <p>Absolutely. Freytor supports one-click CSV import from WhatsApp chat exports and common local carrier data formats. During your free pilot, we'll even import your first 20 shipments for you and show you how the savings stack up compared to your current workflow.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Still have questions CTA -->
@@ -232,7 +314,7 @@
                             Contact Support
                         </a>
                         <a href="signup.html" class="tw-rounded-lg tw-border-2 tw-border-brand-blue tw-px-8 tw-py-4 tw-font-semibold tw-text-brand-blue tw-transition-all tw-duration-300 hover:tw-bg-brand-blue hover:tw-text-white tw-inline-flex tw-place-items-center">
-                            Start Free Trial
+                            Start 30-Day Free Pilot
                         </a>
                     </div>
                 </div>

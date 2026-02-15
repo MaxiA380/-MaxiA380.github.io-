@@ -74,7 +74,7 @@ function openPaddleCheckout(plan, isPopular = false) {
     const checkoutOptions = {
         product: productId,
         title: `Freytor ${capitalize(plan)} Plan`,
-        message: `Subscribe to the ${capitalize(plan)} plan - 14-day free trial`,
+        message: `Subscribe to the ${capitalize(plan)} plan - 30-day free pilot`,
         coupon: '', // Add coupon code if applicable
         email: '', // Pre-fill email if user is logged in
         country: '', // Pre-fill country

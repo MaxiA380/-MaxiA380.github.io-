@@ -20,9 +20,9 @@ const translations = {
         'hero.title3': 'Deliver.',
         'hero.title4': 'Without the chaos.',
         'hero.subtitle': 'Replace spreadsheets, WhatsApp groups, and fragmented carrier portals with one powerful dashboard. Enterprise logistics made simple for growing businesses.',
-        'hero.cta.trial': 'Start Free Trial',
+        'hero.cta.trial': 'Start 30-Day Free Pilot',
         'hero.cta.demo': 'Watch Demo',
-        'hero.trust.trial': '14-day free trial',
+        'hero.trust.trial': '30-day free pilot',
         'hero.trust.nocard': 'No credit card required',
         'hero.trust.cancel': 'Cancel anytime',
         'hero.image.alt': 'Freytor Dashboard Preview',
@@ -169,7 +169,7 @@ const translations = {
         'faq.q2.question': 'Which carriers do you support?',
         'faq.q2.answer': 'We support 100+ carriers globally including DHL, FedEx, UPS, USPS, and many regional carriers in emerging markets. If you don\'t see your carrier, let us know and we\'ll add it.',
         'faq.q3.question': 'Can I try Freytor before committing?',
-        'faq.q3.answer': 'Absolutely! We offer a 14-day free trial with full access to all features. No credit card required. Cancel anytime if it\'s not the right fit.',
+        'faq.q3.answer': 'Yes! We offer a 30-day free pilot (not just a trial) with full access to all features. No credit card required. We import your first 20 shipments free and give you a guided onboarding call.',
         'faq.q4.question': 'Is my data secure with Freytor?',
         'faq.q4.answer': 'Security is our top priority. We use 256-bit SSL encryption, are SOC 2 compliant, and GDPR ready. Your data is encrypted at rest and in transit.',
         'faq.link': 'View all FAQs',
@@ -188,9 +188,9 @@ const translations = {
         // Final CTA
         'finalcta.title': 'Ready to simplify your logistics?',
         'finalcta.subtitle': 'Join 500+ companies already using Freytor to streamline their delivery operations.',
-        'finalcta.trial': 'Start Your Free Trial',
+        'finalcta.trial': 'Start Your Free Pilot',
         'finalcta.sales': 'Talk to Sales',
-        'finalcta.footer': 'No credit card required • 14-day free trial • Cancel anytime',
+        'finalcta.footer': 'No credit card required • 30-day free pilot • Cancel anytime',
         
         // Footer
         'footer.address.line1': 'P.H. Colonial, Vía Israel',
@@ -217,9 +217,9 @@ const translations = {
         
         // Pricing Page
         'pricing.title': 'Simple, transparent pricing',
-        'pricing.subtitle': 'Choose the perfect plan for your logistics needs. Start with a 14-day free trial, no credit card required.',
+        'pricing.subtitle': 'Start with a 30-day free pilot. We import your first 20 shipments and show you the savings — no credit card required.',
         'pricing.features': 'All plans include core tracking features • Cancel anytime • Upgrade or downgrade as you grow',
-        'pricing.trial': 'Start Free Trial',
+        'pricing.trial': 'Start 30-Day Free Pilot',
         'pricing.annual.save': 'Save 10% with our annual plan',
         'pricing.annual': 'ANNUAL',
         'pricing.monthly': 'MONTHLY',
@@ -263,7 +263,7 @@ const translations = {
         'login.signup.link': 'Sign up',
         
         // Signup Page
-        'signup.title': 'Start Your Free Trial',
+        'signup.title': 'Start Your Free Pilot',
         'signup.subtitle': 'No credit card required. Get started in under 60 seconds.',
         'signup.fullname': 'Full Name',
         'signup.email': 'Email',
@@ -306,7 +306,7 @@ const translations = {
         'hero.subtitle': 'Ersetzen Sie Tabellen, WhatsApp-Gruppen und fragmentierte Carrier-Portale durch ein leistungsstarkes Dashboard. Unternehmenslogistik einfach gemacht für wachsende Unternehmen.',
         'hero.cta.trial': 'Kostenlos testen',
         'hero.cta.demo': 'Demo ansehen',
-        'hero.trust.trial': '14 Tage kostenlos testen',
+        'hero.trust.trial': '30 Tage kostenlos testen',
         'hero.trust.nocard': 'Keine Kreditkarte erforderlich',
         'hero.trust.cancel': 'Jederzeit kündbar',
         'hero.image.alt': 'Freytor Dashboard Vorschau',
@@ -474,7 +474,7 @@ const translations = {
         'finalcta.subtitle': 'Schließen Sie sich 500+ Unternehmen an, die Freytor bereits zur Optimierung ihrer Liefervorgänge nutzen.',
         'finalcta.trial': 'Starten Sie Ihre kostenlose Testversion',
         'finalcta.sales': 'Vertrieb kontaktieren',
-        'finalcta.footer': 'Keine Kreditkarte erforderlich • 14 Tage kostenlos testen • Jederzeit kündbar',
+        'finalcta.footer': 'Keine Kreditkarte erforderlich • 30 Tage kostenlos testen • Jederzeit kündbar',
         
         // Footer
         'footer.address.line1': 'P.H. Colonial, Vía Israel',
@@ -590,7 +590,7 @@ const translations = {
         'hero.subtitle': 'Reemplace hojas de cálculo, grupos de WhatsApp y portales de transportistas fragmentados con un panel potente. Logística empresarial simplificada para negocios en crecimiento.',
         'hero.cta.trial': 'Prueba gratuita',
         'hero.cta.demo': 'Ver demo',
-        'hero.trust.trial': 'Prueba gratuita de 14 días',
+        'hero.trust.trial': 'Piloto gratuito de 30 días',
         'hero.trust.nocard': 'Sin tarjeta de crédito',
         'hero.trust.cancel': 'Cancela cuando quieras',
         'hero.image.alt': 'Vista previa del panel de Freytor',
@@ -737,7 +737,7 @@ const translations = {
         'faq.q2.question': '¿Qué transportistas soportan?',
         'faq.q2.answer': 'Admitimos más de 100 transportistas a nivel mundial, incluidos DHL, FedEx, UPS, USPS y muchos transportistas regionales en mercados emergentes. Si no ve su transportista, háganoslo saber y lo agregaremos.',
         'faq.q3.question': '¿Puedo probar Freytor antes de comprometerme?',
-        'faq.q3.answer': '¡Absolutamente! Ofrecemos una prueba gratuita de 14 días con acceso completo a todas las características. Sin tarjeta de crédito requerida. Cancele en cualquier momento si no es el adecuado.',
+        'faq.q3.answer': '¡Sí! Ofrecemos un piloto gratuito de 30 días con acceso completo a todas las características. Sin tarjeta de crédito. Importamos sus primeros 20 envíos gratis y le damos una llamada de onboarding guiada.',
         'faq.q4.question': '¿Están seguros mis datos con Freytor?',
         'faq.q4.answer': 'La seguridad es nuestra máxima prioridad. Usamos cifrado SSL de 256 bits, cumplimos con SOC 2 y estamos listos para GDPR. Sus datos están encriptados en reposo y en tránsito.',
         'faq.link': 'Ver todas las FAQ',
@@ -758,7 +758,7 @@ const translations = {
         'finalcta.subtitle': 'Únase a más de 500 empresas que ya usan Freytor para optimizar sus operaciones de entrega.',
         'finalcta.trial': 'Comience su prueba gratuita',
         'finalcta.sales': 'Hable con ventas',
-        'finalcta.footer': 'Sin tarjeta de crédito • Prueba gratuita de 14 días • Cancele en cualquier momento',
+        'finalcta.footer': 'Sin tarjeta de crédito • Piloto gratuito de 30 días • Cancele en cualquier momento',
         
         // Footer
         'footer.address.line1': 'P.H. Colonial, Vía Israel',
@@ -785,7 +785,7 @@ const translations = {
         
         // Pricing Page
         'pricing.title': 'Precios simples y transparentes',
-        'pricing.subtitle': 'Elija el plan perfecto para sus necesidades logísticas. Comience con una prueba gratuita de 14 días, sin tarjeta de crédito requerida.',
+        'pricing.subtitle': 'Comience con un piloto gratuito de 30 días. Importamos sus primeros 20 envíos y le mostramos los ahorros — sin tarjeta de crédito.',
         'pricing.features': 'Todos los planes incluyen características de seguimiento básicas • Cancele en cualquier momento • Actualice o reduzca a medida que crece',
         'pricing.trial': 'Prueba gratuita',
         'pricing.annual.save': 'Ahorre un 10% con nuestro plan anual',
@@ -831,7 +831,7 @@ const translations = {
         'login.signup.link': 'Registrarse',
         
         // Signup Page
-        'signup.title': 'Comience su prueba gratuita',
+        'signup.title': 'Comience su piloto gratuito',
         'signup.subtitle': 'Sin tarjeta de crédito requerida. Comience en menos de 60 segundos.',
         'signup.fullname': 'Nombre completo',
         'signup.email': 'Correo electrónico',
